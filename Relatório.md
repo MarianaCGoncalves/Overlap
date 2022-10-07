@@ -1,11 +1,11 @@
-*TeamUP 
+ * TeamUP 
 
 
-**Breve descrição da app-
+ ** Breve descrição da app-
 
 É um aplicativo onde as pessoas inserem os seus gostos desportivos, como por exemplo as suas equipas favoritas, podendo assim encontrarem-se com outras pessoas que partilham os mesmos gostos. 
 
-**Descrição dos objetivos–
+ ** Descrição dos objetivos–
 
 	A ideia da aplicação surgiu através devido a falta de pessoas que compartilham o mesmo gosto desportivo. Para isso criou-se TeamUp, uma aplicação que visa encontrar pessoas que partilham o mesmo gosto desportivo: 
 
