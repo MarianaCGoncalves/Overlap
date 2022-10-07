@@ -27,6 +27,7 @@ Aplicações com o mesmo intuito que o TeamUp:
 
 
 6.
+	
 	O utilizador após entrar na aplicação vai encontrar uma caixa de texto onde irá inserir o seu nome de utilizador, o seu email e a palavra passe para a sua conta, a seguir ao terminar este processo o utilizador poderá escolher os desportos que deseja seguir e as suas equipas favoritas. 
 	Ao abrir a aplicação o utilizador poderá ver a sua “Home page” onde se encontram os grupos no qual se juntou, se o utilizador não estiver em nenhum grupo será sugerido grupos onde pessoas com gostos semelhantes se encontram.
 	O utilizador encontrará 3 botões na parte inferior do ecrã, uma lupa, uma casa e um sinal de gps, respetivamente. Na lupa conseguirá procurar mais grupos caso deseje explorar os seus gostos desportivos. Na casa voltará a sua “Home page” e por fim tem o sinal de gps no qual pode ver os eventos que estão a decorrer perto da sua localização. 
