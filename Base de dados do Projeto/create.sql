@@ -1,5 +1,6 @@
 create table tags (
     tag_id SERIAL not null,
+    tag_name VARCHAR(40) not null,
     primary key (tag_id)
 );
 
@@ -19,7 +20,7 @@ create table tg (
 
 create table users (
     use_id SERIAL not null,
-    use_name VARCHAR(60) not null,
+    use_name VARCHAR(40) not null,
     use_sex CHAR(1) not null,
     use_acc_age TIMESTAMP,
     use_eq_tag tags not null, /* mudar o tipo, não sei se será assim */
@@ -30,7 +31,7 @@ create table users (
 create table grupos(
     gru_id SERIAL not null,
     gru_use_id int not null,
-    gru_name VARCHAR(40) not null,
+    gru_name VARCHAR(60) not null,
     gru_desc VARCHAR(120),
     gru_eq_tag tags not null,
     gru_create_age TIMESTAMP not null,
