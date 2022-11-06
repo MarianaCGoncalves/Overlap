@@ -20,11 +20,11 @@ create table tg (
 
 create table users (
     use_id SERIAL not null,
-    use_name VARCHAR(40) not null,
+    use_name VARCHAR(40) not null, 
     use_sex CHAR(1) not null,
     use_acc_age TIMESTAMP,
-    use_eq_tag tags not null, /* mudar o tipo, não sei se será assim */
-    use_pil_tag tags, /* mesmo caso */
+    use_eq_tag int not null, /* mudar o tipo, não sei se será assim */
+    use_pil_tag int, /* mesmo caso */
     primary key (use_id)
 );
 
@@ -33,7 +33,7 @@ create table grupos(
     gru_use_id int not null,
     gru_name VARCHAR(60) not null,
     gru_desc VARCHAR(120),
-    gru_eq_tag tags not null,
+    gru_eq_tag int not null, /* tag_id ou int?? */
     gru_create_age TIMESTAMP not null,
     gru_last_post_age TIMESTAMP,
     gru_at , /*at --- atividade do grupo, pode ser 'ativo' ou 'inativo' */
@@ -62,7 +62,6 @@ create table eventos(
     eve_ts TIMESTAMP not null,
     eve_evt_id int not null,
     primary key (eve_id)
-
 );
 
 create table tipoevento(
@@ -84,7 +83,7 @@ create table evefisico ();
 
 create table estado (
     est_id SERIAL not null,
-    est_nome VARCHAR(60),
+    est_name VARCHAR(60),
     primary key (est_id)
 );
 
