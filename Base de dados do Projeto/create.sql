@@ -22,7 +22,7 @@ create table users (
     use_id SERIAL not null,
     use_name VARCHAR(40) not null, 
     use_sex CHAR(1) not null,
-    use_acc_age TIMESTAMP,
+    use_acc_age date,
     use_eq_tag int not null, /* mudar o tipo, não sei se será assim */
     use_pil_tag int, /* mesmo caso */
     primary key (use_id)
@@ -33,10 +33,10 @@ create table grupos(
     gru_use_id int not null,
     gru_name VARCHAR(60) not null,
     gru_desc VARCHAR(120),
-    gru_eq_tag int not null, /* tag_id ou int?? */
-    gru_create_age TIMESTAMP not null,
+    gru_eq_tag int not null, 
+    gru_create_age date not null,
     gru_last_post_age TIMESTAMP,
-    gru_at , /*at --- atividade do grupo, pode ser 'ativo' ou 'inativo' */
+    gru_at VARCHAR(1), /* V - ativo | F - inativo */
     primary key (gru_id)
 );
 

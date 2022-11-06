@@ -12,11 +12,11 @@ insert into tags (tag_name) values ('Ferrari');
 
 /* insert into tu and tg ?? */
 
-insert into users (use_name, use_sex,use_acc_age, use_eq_tag, use_pil_tag) values ('Francisco Costa','M','','1','');
-insert into users (use_name, use_sex,use_acc_age, use_eq_tag, use_pil_tag) values ('Joana Santos','F','','4','');
-insert into users (use_name, use_sex,use_acc_age, use_eq_tag, use_pil_tag) values ('Rafael Montes','M','','1','');
-insert into users (use_name, use_sex,use_acc_age, use_eq_tag, use_pil_tag) values ('Andreia André','F','','7','');
-insert into users (use_name, use_sex,use_acc_age, use_eq_tag, use_pil_tag) values ('Álvaro Lopes','M','','7','');
+insert into users (use_name, use_acc_age, use_eq_tag, use_pil_tag) values ('Francisco Costa','','1','');
+insert into users (use_name, use_acc_age, use_eq_tag, use_pil_tag) values ('Joana Santos','','4','');
+insert into users (use_name, use_acc_age, use_eq_tag, use_pil_tag) values ('Rafael Montes','','1','');
+insert into users (use_name, use_acc_age, use_eq_tag, use_pil_tag) values ('Andreia André','','7','');
+insert into users (use_name, use_acc_age, use_eq_tag, use_pil_tag) values ('Álvaro Lopes','','7','');
 
 /*alterar os nomes das equipas e ids */
 insert into grupos (gru_name, gru_desc, gru_eq_tag) values ('Grupo Ferrari','Grupo que junta pessoas com interesse na equipa de f1 Ferrari.','1');
