@@ -4,6 +4,9 @@ create table tags (
     primary key (tag_id)
 );
 
+
+--1 para zero = um para muitos a key fica do lado que nao é sempre
+
 create table tu (
     tu_id SERIAL not null,
     tu_tag_id int not null,
@@ -30,13 +33,13 @@ create table users (
 
 create table grupos(
     gru_id SERIAL not null,
-    gru_use_id int not null,
+    gru_use_id int not null, --moderador
     gru_name VARCHAR(60) not null,
     gru_desc VARCHAR(120),
     gru_eq_tag int not null, 
     gru_create_age date not null,
     gru_last_post_age TIMESTAMP,
-    gru_at VARCHAR(1), /* V - ativo | F - inativo */
+    gru_at VARCHAR(1), /* V - ativo | F - inativo or boolean? */
     primary key (gru_id)
 );
 
