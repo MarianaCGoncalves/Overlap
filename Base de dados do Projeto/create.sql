@@ -25,7 +25,7 @@ create table users (
     use_id SERIAL not null,
     use_name VARCHAR(40) not null, 
     use_sex CHAR(1) not null,
-    use_acc_age date,
+    use_acc_age date not null,
     use_password VARCHAR(30) not null, 
     use_mail VARCHAR(50) not null, 
     primary key (use_id)
@@ -36,7 +36,7 @@ create table grupos(
     gru_use_id int not null, --moderador
     gru_name VARCHAR(60) not null,
     gru_desc VARCHAR(120),
-    gru_eq_tag int not null, /*prob remove*/
+    gru_eq_tag int not null,
     gru_create_age date not null,
     gru_last_post_age TIMESTAMP,
     gru_at VARCHAR(1), /* V - ativo | F - inativo or boolean? */
@@ -69,7 +69,7 @@ create table eventos(
 
 create table tipoevento(
     evt_id SERIAL not null,
-    evt_nome VARCHAR(40),
+    evt_name VARCHAR(40),
     primary key (evt_id)
 );
 
@@ -80,9 +80,22 @@ create table uge (
     primary key (uge_id)
 );
 
-create table eveonline ();
+create table eveonline (
+    eve_on_id SERIAL not null,
+    eve_on_name VARCHAR(40) not null,
+    eve_on_desc VARCHAR(80),
+    eve_on_dt date not null,
+    eve_on_use ,--users que participam no evento
+);
 
-create table evefisico ();
+create table evefisico (
+    eve_fi_id SERIAL not null,
+    eve_fi_name VARCHAR(60) not null,
+    eve_fi_desc VARCHAR(80), 
+    eve_fi_dt date not null,
+    eve_fi_use, -- participantes
+    eve_fi_loc --criar entidade localização? 
+); 
 
 create table estado (
     est_id SERIAL not null,
@@ -113,7 +126,7 @@ create table follows (
 
 alter table tu
 add constraint tu_fk_tags
-foreign key (tu_tag_id) references tag(tag_id)      /* tu (muitos para um) tags */
+foreign key (tu_tag_id) references tags(tag_id)      /* tu (muitos para um) tags */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table tu
@@ -123,7 +136,7 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table tg
 add constraint tg_fk_tags
-foreign key (tg_tag_id) references tag(tag_id)      /* tg (muitos para um) tags */
+foreign key (tg_tag_id) references tags(tag_id)      /* tg (muitos para um) tags */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table tg
@@ -189,5 +202,15 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 alter table mensagem
 add constraint mensagem_fk_ug
 foreign key (mes_ug_id) references ug(ug_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table follows
+add constraint follows_fk_users 
+foreign key (fol_use_id) references users(use_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table follows
+add constraint follows_fk_users 
+foreign key (fol_use_id) references users(use_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
