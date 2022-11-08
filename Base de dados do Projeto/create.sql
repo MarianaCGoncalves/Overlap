@@ -26,8 +26,8 @@ create table users (
     use_name VARCHAR(40) not null, 
     use_sex CHAR(1) not null,
     use_acc_age date,
-    use_eq_tag int not null, /* mudar o tipo, não sei se será assim */
-    use_pil_tag int, /* mesmo caso */
+    use_password VARCHAR(30) not null, 
+    use_mail VARCHAR(50) not null, 
     primary key (use_id)
 );
 
@@ -36,7 +36,7 @@ create table grupos(
     gru_use_id int not null, --moderador
     gru_name VARCHAR(60) not null,
     gru_desc VARCHAR(120),
-    gru_eq_tag int not null, 
+    gru_eq_tag int not null, /*prob remove*/
     gru_create_age date not null,
     gru_last_post_age TIMESTAMP,
     gru_at VARCHAR(1), /* V - ativo | F - inativo or boolean? */
@@ -101,6 +101,7 @@ create table comment (
     comm_id SERIAL not null,
     comm_mes_id int not null,
     comm_ug_id int not null,
+    mes_comment_text text,
     primary key (comm_id)
 ); /* falta adicionar atributos */
 
