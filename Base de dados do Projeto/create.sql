@@ -36,7 +36,7 @@ create table grupos(
     gru_use_id int not null, --moderador
     gru_name VARCHAR(60) not null,
     gru_desc VARCHAR(120),
-    gru_eq_tag int not null,
+    --gru_eq_tag int not null,
     gru_create_age date not null,
     gru_last_post_age TIMESTAMP,
     gru_at VARCHAR(1), /* V - ativo | F - inativo or boolean? */
