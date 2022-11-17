@@ -23,7 +23,7 @@ create table user (
     use_id SERIAL not null,
     use_name VARCHAR(40) not null, 
     use_acc_age date not null,
-    use_password VARCHAR(30) not null, 
+    use_pass VARCHAR(30) not null, 
     use_mail VARCHAR(50) not null, 
     primary key (use_id)
 );
@@ -39,27 +39,29 @@ create table grupos(
     primary key (gru_id)
 );
 
-create table ug(
+create table usergroup(
     ug_id SERIAL not null,
-    ug_use_id int not null,
     ug_gru_id int not null,
+    ug_use_id int not null,
     primary key (ug_id)
 );
 
 create table mensagem(
     mes_id SERIAL not null,
-    mes_ug_id int not null,
-    mes_ts TIMESTAMP not null,
     mes_text text,
+    mes_use_id int not null,
+    mes_ug_id int not null,
+    mes_date TIMESTAMP not null,
     primary key (mes_id)
 );
 
-create table eventos(
+create table event(
     eve_id SERIAL not null,
+    eve_name VARCHAR(60) not null,
     eve_ug_id int not null,
-    eve_dt TIME not null,
-    eve_ts TIMESTAMP not null,
-    eve_evt_id int not null,
+    eve_desc VARCHAR(120) int not null,
+    eve_date TIMESTAMP not null,
+    eve_type VARCHAR(60) not null,
     primary key (eve_id)
 );
 
@@ -69,7 +71,7 @@ create table tipoevento(
     primary key (evt_id)
 );
 
-create table uge (
+create table usergroupevent (
     uge_id SERIAL not null,
     uge_ug_id int not null,
     uge_eve_id int not null,
@@ -78,26 +80,26 @@ create table uge (
 
 create table eveonline (
     eve_on_id SERIAL not null,
-    eve_on_name VARCHAR(40) not null,
-    eve_on_desc VARCHAR(80),
+    eve_on_ug_id int not null,
     eve_on_dt date not null,
+    eve_on_ts TIMESTAMP not null,
     eve_on_eve_id int not null,
     primary key (eve_on_id)
 );
 
 create table evefisico (
-    eve_fi_id SERIAL not null,
-    eve_fi_name VARCHAR(60) not null,
-    eve_fi_desc VARCHAR(80), 
-    eve_fi_dt date not null,
-    eve_fi_eve_id int not null,
+    eve_phy_id SERIAL not null,
+    eve_phy_ug_id int not null,
+    eve_phy_dt date not null,
+    eve_phy_ts TIMESTAMP not null,
+    eve_phy_eve_id int not null,
     primary key (eve_fi_id)
 ); 
 
 create table localizacao (
-    local_id SERIAL not null,
-    local_name VARCHAR(20) not null,
-    local_point point not null,
+    locat_id SERIAL not null,
+    locat_name VARCHAR(20) not null,
+    locat_point point not null,
     primary key (local_id)
 
 );
@@ -109,31 +111,31 @@ create table evefilocal (
     primary key (eve_filocal_id)
 );
 
-create table estado (
-    est_id SERIAL not null,
-    est_name VARCHAR(1), -- | cancelou - C | vai - V | vai mas atrasado - v | não vai - N |
+create table status (
+    st_id SERIAL not null,
+    st_name VARCHAR(1), -- | cancelou - C | vai - V | vai mas atrasado - v | não vai - N |
     primary key (est_id)
 );
 
-create table ugestado (
+create table ugestatus (
     ugest_id SERIAL not null,
     ugest_uge_id int not null,
-    ugest_est_id int not null,
+    ugest_st_id int not null,
     primary key (ugest_id)
 );
 
 create table comment (
-    comm_id SERIAL not null,
-    comm_mes_id int not null,
+    com_id SERIAL not null,
+    com_message_id int not null,
     comm_ug_id int not null,
-    comm_mes_text text,
+    com_message_text text,
     primary key (comm_id)
 ); 
 
 create table follows (
     fol_id SERIAL not null,
-    fol_use_idA int not null,
-    fol_use_idB int not null,
+    fol_use_id_a int not null,
+    fol_use_id_b int not null,
     primary key (fol_id)
 );
 
