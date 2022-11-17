@@ -1,25 +1,25 @@
-create table tags (
+create table tag (
     tag_id SERIAL not null,
     tag_name VARCHAR(40) not null,
     primary key (tag_id)
 );
 --1 para zero = um para muitos a key fica do lado que nao é sempre
 
-create table tu (
+create table usertag (
     tu_id SERIAL not null,
     tu_tag_id int not null,
     tu_use_id int not null,
     primary key (tu_id)
 );
 
-create table tg (
+create table grouptag (
     tg_id SERIAL not null,
     tg_tag_id int not null,
     tg_gru_id int not null,
     primary key (tg_id)
 );
 
-create table users (
+create table user (
     use_id SERIAL not null,
     use_name VARCHAR(40) not null, 
     use_acc_age date not null,
@@ -97,8 +97,7 @@ create table evefisico (
 create table localizacao (
     local_id SERIAL not null,
     local_name VARCHAR(20) not null,
-    local_lon  VARCHAR(60) not null, --Double not char
-    local_lat VARCHAR(60) not null,  --Double not char
+    local_point point not null,
     primary key (local_id)
 
 );
