@@ -104,10 +104,10 @@ create table localizacao (
 
 );
 
-create table evefilocal (
-    eve_filocal_id SERIAL not null,
-    eve_filocal_evefi_id int not null,
-    eve_filocal_local_id int not null,
+create table evephylocat (
+    eve_phylocat_id SERIAL not null,
+    eve_phylocat_evephy_id int not null,
+    eve_phylocat_locat_id int not null,
     primary key (eve_filocal_id)
 );
 
