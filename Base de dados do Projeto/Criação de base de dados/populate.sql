@@ -1,4 +1,3 @@
-/* mudar nome das equipas */
 insert into tags (tag_name) values ('Ferrari'); -- 1
 insert into tags (tag_name) values ('Mercedes'); -- 2
 insert into tags (tag_name) values ('RedBull'); -- 3
