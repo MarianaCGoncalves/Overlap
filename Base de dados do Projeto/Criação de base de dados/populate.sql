@@ -87,7 +87,7 @@ insert into evephylocat (eve_phylocat_evephy_id, eve_phylocat_locat_id) values (
 
 -- tipo de evento : enumeracao?
 
-insert into ugestado (ugest_uge_id, ugest_est_id) values ();
+insert into ugestatus (ugest_uge_id, ugest_est_id) values ();
 
 insert into follows (fol_use_idA, fol_use_idB) values (1,4); -- Gustavo segue o Manuel.
 insert into follows (fol_use_idA, fol_use_idB) values (4,1); -- Manuel segue o Gustavo.
