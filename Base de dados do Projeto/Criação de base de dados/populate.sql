@@ -30,15 +30,15 @@ insert into grouptag (tg_tag_id, tg_gru_id) values (8,8); -- Haas - Grupo Haas
 insert into grouptag (tg_tag_id, tg_gru_id) values (9,9); -- Alphatauri - Grupo Alphatauri
 insert into grouptag (tg_tag_id, tg_gru_id) values (10,10); -- Williams - Grupo Williams
 
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Gustavo Costa','','123','gcosta@gmail.com'); -- Criação do utilizador Gustavo Costa
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Joana Pinto','','123','joanapinto@gmail.com'); -- Criação do utilizador Joana Pinto
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Francisco Andrade','','123','frandrade@gmail.com'); -- Criação do utilizador Francisco Andrade
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Manuel Gusmão','','123','MG@gmail.com'); -- Criação do utilizador Manuel Gusmão
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Pablo Diaz','','123','PDiaz@gmail.com'); -- Criação do utilizador Pablo Diaz
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Maria Pereira','','123','maripe@gmail.com'); -- Criação do utilizador Maria Pereira
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('José Almeida','','123','JAlmeida@gmail.com'); -- Criação do utilizador José Almeida
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Frederico Pinheiro','','123','pinheiro@gmail.com'); -- Criação do utilizador Frederico Pinheiro
-insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Júlia Pinheiro','','123','juliapinheiro@gmail.com'); -- Criação do utilizador Júlia Pinheiro
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Gustavo Costa', to_date('2022.05.06','YYYY.MM.DD'),'123','gcosta@gmail.com'); -- Criação do utilizador Gustavo Costa
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Joana Pinto', to_date('2022.05.07','YYYY.MM.DD'),'123','joanapinto@gmail.com'); -- Criação do utilizador Joana Pinto
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Francisco Andrade', to_date('2022.01.10','YYYY.MM.DD'),'123','frandrade@gmail.com'); -- Criação do utilizador Francisco Andrade
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Manuel Gusmão', to_date('2022.02.26','YYYY.MM.DD'),'123','MG@gmail.com'); -- Criação do utilizador Manuel Gusmão
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Pablo Diaz', to_date('2022.07.06','YYYY.MM.DD'),'123','PDiaz@gmail.com'); -- Criação do utilizador Pablo Diaz
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Maria Pereira', to_date('2022.10.06','YYYY.MM.DD'),'123','maripe@gmail.com'); -- Criação do utilizador Maria Pereira
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('José Almeida', to_date('2022.05.06','YYYY.MM.DD'),'123','JAlmeida@gmail.com'); -- Criação do utilizador José Almeida
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Frederico Pinheiro', to_date('2022.09.05','YYYY.MM.DD'),'123','pinheiro@gmail.com'); -- Criação do utilizador Frederico Pinheiro
+insert into user (use_name, use_acc_age, use_pass, use_mail) values ('Júlia Pinheiro', to_date('2022.08.03','YYYY.MM.DD'),'123','juliapinheiro@gmail.com'); -- Criação do utilizador Júlia Pinheiro
 
 insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Ferrari','Grupo que junta pessoas com interesse na equipa de f1 Ferrari.','0');
 insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Mercedes','Grupo que junta pessoas com interesse na equipa de f1 Mercedes.','0');
