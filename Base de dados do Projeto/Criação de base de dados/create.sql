@@ -1,4 +1,4 @@
-create table tag (
+create table tags (
     tag_id SERIAL not null,
     tag_name VARCHAR(40) not null,
     primary key (tag_id)
