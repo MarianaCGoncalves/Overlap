@@ -19,7 +19,7 @@ create table grouptag (
     primary key (tg_id)
 );
 
-create table user (
+create table users (
     use_id SERIAL not null,
     use_name VARCHAR(40) not null, 
     use_acc_age date not null,
@@ -55,7 +55,7 @@ create table mensagem(
     primary key (mes_id)
 );
 
-create table event(
+create table eventos (
     eve_id SERIAL not null,
     eve_name VARCHAR(60) not null,
     eve_ug_id int not null,
@@ -139,23 +139,23 @@ create table follows (
     primary key (fol_id)
 );
 
-alter table tu
-add constraint tu_fk_tags
+alter table usertag
+add constraint usertag_fk_tags
 foreign key (tu_tag_id) references tags(tag_id)      /* tu (muitos para um) tags */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table tu
-add constraint tu_fk_users
+alter table usertag
+add constraint usertag_fk_users
 foreign key (tu_use_id) references users(use_id)    /* tu (muitos para um) users */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table tg
-add constraint tg_fk_tags
+alter table grouptag
+add constraint grouptag_fk_tags
 foreign key (tg_tag_id) references tags(tag_id)      /* tg (muitos para um) tags */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table tg
-add constraint tg_fk_grupos
+alter table grouptag
+add constraint grouptag_fk_grupos
 foreign key (tg_gru_id) references grupos(gru_id)   /* tg (muitos para um) grupos */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
@@ -164,29 +164,29 @@ add constraint grupos_fk_users
 foreign key (gru_use_id) references users(use_id)   /* grupos (muitos para um) users */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table ug 
-add constraint ug_fk_grupos
+alter table usergroup 
+add constraint usergroup_fk_grupos
 foreign key (ug_gru_id) references grupos(gru_id)   /* ug (muitos para um) grupos */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table ug
-add constraint ug_fk_users
+alter table usergroup
+add constraint usergroup_fk_users
 foreign key (ug_use_id) references users(use_id)    /* ug (muitos para um) users */
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table uge 
-add constraint uge_fk_ug
-foreign key (uge_ug_id) references ug(ug_id)
+alter table usergroupevent 
+add constraint usergroupevent_fk_usergroup
+foreign key (uge_ug_id) references usergroup(ug_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table uge 
-add constraint uge_fk_eventos
+alter table usergroupevent 
+add constraint usergroupevent_fk_eventos
 foreign key (uge_eve_id) references eventos(eve_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table eventos
-add constraint eventos_fk_ug
-foreign key (eve_ug_id) references ug(ug_id)
+add constraint eventos_fk_usergroup
+foreign key (eve_ug_id) references usergroup(ug_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table eventos 
@@ -194,19 +194,19 @@ add constraint eventos_fk_tipoevento
 foreign key (eve_evt_id) references tipoevento(evt_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table ugestado
-add constraint ugestado_fk_uge
-foreign key (ugest_uge_id) references uge(uge_id)
+alter table ugestatus
+add constraint ugestatus_fk_usergroupevent
+foreign key (ugest_uge_id) references usergroupevent(uge_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table ugestado 
-add constraint ugestado_fk_estado
-foreign key (ugest_est_id) references estado(est_id)
+alter table ugestatus
+add constraint ugestatus_fk_status
+foreign key (ugest_st_id) references status(st_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table comment 
-add constraint comment_fk_ug
-foreign key (comm_ug_id) references ug(ug_id)
+add constraint comment_fk_usergroup
+foreign key (comm_ug_id) references usergroup(ug_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table comment 
@@ -215,8 +215,8 @@ foreign key (comm_mes_id) references mensagem(mes_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table mensagem
-add constraint mensagem_fk_ug
-foreign key (mes_ug_id) references ug(ug_id)
+add constraint mensagem_fk_usergroup
+foreign key (mes_ug_id) references usergroup(ug_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table follows
@@ -236,15 +236,15 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table evefisico
 add constraint evefisico_fk_eventos
-foreign key (eve_fi_eve_id) references eventos(eve_id)
+foreign key (eve_phy_eve_id) references eventos(eve_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table evefilocal
-add constraint evefilocal_fks_evefisico
-foreign key (eve_filocal_evefi_id) references (eve_fi_id)
+alter table evephylocat
+add constraint evephylocat_fks_evefisico
+foreign key (eve_phylocat_evephy_id) references evefisico(eve_fi_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table evefilocal
-add constraint evefilocal_fks_localizacao
-foreign key (eve_filocal_local_id) references (local_id)
+alter table evephylocat
+add constraint evephylocat_fks_localizacao
+foreign key (eve_phylocat_locat_id) references (locat_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
