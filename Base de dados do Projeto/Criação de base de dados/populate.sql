@@ -1,13 +1,13 @@
-insert into tags (tag_name) values ('Ferrari'); -- 1
-insert into tags (tag_name) values ('Mercedes'); -- 2
-insert into tags (tag_name) values ('RedBull'); -- 3
-insert into tags (tag_name) values ('Mclaren'); -- 4
-insert into tags (tag_name) values ('Alpine'); -- 5
-insert into tags (tag_name) values ('Alfa Romeo'); -- 6
-insert into tags (tag_name) values ('Aston Martin'); -- 7
-insert into tags (tag_name) values ('Haas'); -- 8
-insert into tags (tag_name) values ('Alphatauri'); -- 9
-insert into tags (tag_name) values ('Williams'); -- 10
+insert into tags (tag_name) values ('Ferrari'); -- Ferrari será a tag 1
+insert into tags (tag_name) values ('Mercedes'); -- Mercedes será a tag 2
+insert into tags (tag_name) values ('RedBull'); -- RedBull será a tag  3 
+insert into tags (tag_name) values ('Mclaren'); -- Mclaren será a tag 4
+insert into tags (tag_name) values ('Alpine'); -- Alpine será a tag 5
+insert into tags (tag_name) values ('Alfa Romeo'); -- Alfa Romeo será a tag 6
+insert into tags (tag_name) values ('Aston Martin'); -- Aston Martin será a tag 7
+insert into tags (tag_name) values ('Haas'); -- Haas será a tag 8
+insert into tags (tag_name) values ('Alphatauri'); -- Alphatauri será a tag 9
+insert into tags (tag_name) values ('Williams'); -- Williams será a tag 10
 
 insert into usertag (tu_tag_id, tu_use_id) values (1,1); -- Gustavo Costa - Ferrari
 insert into usertag (tu_tag_id, tu_use_id) values (6,3); -- Francisco Andrade - Alfa Romeo
