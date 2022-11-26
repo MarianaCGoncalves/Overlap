@@ -59,9 +59,10 @@ create table eventos (
     eve_id SERIAL not null,
     eve_name VARCHAR(60) not null,
     eve_ug_id int not null,
-    eve_desc VARCHAR(120) int not null,
+    eve_desc VARCHAR(120) not null,
     eve_date TIMESTAMP not null,
     eve_type VARCHAR(60) not null,
+	eve_evt_id int not null,
     primary key (eve_id)
 );
 
@@ -93,14 +94,14 @@ create table evefisico (
     eve_phy_dt date not null,
     eve_phy_ts TIMESTAMP not null,
     eve_phy_eve_id int not null,
-    primary key (eve_fi_id)
+    primary key (eve_phy_id)
 ); 
 
 create table localizacao (
     locat_id SERIAL not null,
     locat_name VARCHAR(20) not null,
     locat_point point not null,
-    primary key (local_id)
+    primary key (locat_id)
 
 );
 
@@ -108,13 +109,13 @@ create table evephylocat (
     eve_phylocat_id SERIAL not null,
     eve_phylocat_evephy_id int not null,
     eve_phylocat_locat_id int not null,
-    primary key (eve_filocal_id)
+    primary key (eve_phylocat_id)
 );
 
 create table status (
     st_id SERIAL not null,
     st_name VARCHAR(1), -- | cancelou - C | vai - V | vai mas atrasado - v | não vai - N |
-    primary key (est_id)
+    primary key (st_id)
 );
 
 create table ugestatus (
@@ -125,10 +126,10 @@ create table ugestatus (
 );
 
 create table comment (
-    com_id SERIAL not null,
-    com_message_id int not null,
+    comm_id SERIAL not null,
+    comm_mes_id int not null,
     comm_ug_id int not null,
-    com_message_text text,
+    comm_mes_text text,
     primary key (comm_id)
 ); 
 
@@ -219,15 +220,6 @@ add constraint mensagem_fk_usergroup
 foreign key (mes_ug_id) references usergroup(ug_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-alter table follows
-add constraint follows_fk_users 
-foreign key (fol_use_idA) references users(use_id)
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter table follows
-add constraint follows_fk_users 
-foreign key (fol_use_idB) references users(use_id)
-ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table eveonline
 add constraint eveonline_fk_eventos
@@ -241,10 +233,20 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table evephylocat
 add constraint evephylocat_fks_evefisico
-foreign key (eve_phylocat_evephy_id) references evefisico(eve_fi_id)
+foreign key (eve_phylocat_evephy_id) references evefisico(eve_phy_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table evephylocat
 add constraint evephylocat_fks_localizacao
-foreign key (eve_phylocat_locat_id) references (locat_id)
+foreign key (eve_phylocat_locat_id) references localizacao(locat_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table follows --duvida
+add constraint follows_fk_users 
+foreign key (fol_use_idA) references users(use_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table follows
+add constraint follows_fk_users 
+foreign key (fol_use_idB) references users(use_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
