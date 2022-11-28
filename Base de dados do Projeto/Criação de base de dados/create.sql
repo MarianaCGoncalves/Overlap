@@ -30,7 +30,7 @@ create table users (
 
 create table grupos(
     gru_id SERIAL not null,
-    gru_use_id int not null, --moderador
+    gru_use_id int, --moderador
     gru_name VARCHAR(60) not null,
     gru_desc VARCHAR(120),
     gru_create_age date not null,
@@ -135,8 +135,8 @@ create table comment (
 
 create table follows (
     fol_id SERIAL not null,
-    fol_use_id_a int not null,
-    fol_use_id_b int not null,
+    fol_use_id_a int not null,		-- a that follows b 
+    fol_use_id_b int not null,		-- b followed by a
     primary key (fol_id)
 );
 
@@ -242,11 +242,11 @@ foreign key (eve_phylocat_locat_id) references localizacao(locat_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table follows --duvida
-add constraint follows_fk_users 
-foreign key (fol_use_idA) references users(use_id)
+add constraint follows_fk_users1
+foreign key (fol_use_id_a) references users(use_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table follows
-add constraint follows_fk_users 
-foreign key (fol_use_idB) references users(use_id)
+add constraint follows_fk_users2 
+foreign key (fol_use_id_b) references users(use_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
