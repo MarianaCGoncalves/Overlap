@@ -65,9 +65,9 @@ insert into mensagem (mes_ug_id, mes_date, mes_text, mes_use_id) values (1, TO_T
 
 insert into comment (comm_mes_id, comm_ug_id, comm_mes_text) values (1,1,'Eu quero! Queres combinar algum sitio para almoçar?'); -- Gustavo responde à mensagem do Manuel. (No grupo da Ferrari).
 
-insert into eventos (eve_ug_id, eve_dt, eve_ts, eve_evt_id) values (4, to_date('2022.09.22','YYYY.MM.DD'), TO_TIMESTAMP ('10-Sep-02 13:23:10.123000', 'DD-Mon-RR HH24:MI:SS.FF'),2); --Evento no grupo da Ferrari criado pelo Manuel Gusmão.
-insert into eventos (eve_ug_id, eve_dt, eve_ts, eve_evt_id) values (6, to_date('2022.09.25','YYYY.MM.DD'), TO_TIMESTAMP ('25-Sep-22 14:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF'),3); --Evento no grupo da Alpine criado pelo José Almeida.
-insert into eventos (eve_ug_id, eve_dt, eve_ts, eve_evt_id) values (5, to_date('2022.10.10','YYYY.MM.DD'), TO_TIMESTAMP ('10-Out-22 14:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF'),2); --Evento no grupo da Alfa Romeo criado pelo Pablo Diaz.
+insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_date) values (4, 'Assistir a corrida em Santos!', 'Assistir a corrida em Santos que começa às 15 horas. Vamos nos encontrar ao pé da Taska da Txika às 14:45h!',3, TO_TIMESTAMP ('10-Sep-02 13:23:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')); --Evento no grupo da Ferrari criado pelo Manuel Gusmão.
+insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_date) values (6,'WatchParty','WatchParty no grupo de discord! Link do grupo:',3, TO_TIMESTAMP ('10-Out-22 14:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF')); --Evento no grupo da Alfa Romeo criado pelo Pablo Diaz. )
+insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_date) values (5,'Beber um café', 'Vamos beber um café no Patio café, para falar sobre as estrategias da Alpine.',2, TO_TIMESTAMP ('25-Sep-22 14:10:10.123000', 'DD-Mon-RR HH24:MI:SS.FF'),3); --Evento no grupo da Alpine criado pelo José Almeida )
 
 insert into tipoevento (evt_name) values ('WatchParty Online');
 insert into tipoevento (evt_name) values ('WatchParty');
