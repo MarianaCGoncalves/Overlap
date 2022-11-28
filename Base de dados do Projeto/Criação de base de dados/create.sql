@@ -61,7 +61,6 @@ create table eventos (
     eve_ug_id int not null,
     eve_desc VARCHAR(120) not null,
     eve_date TIMESTAMP not null,
-    eve_type VARCHAR(60) not null,
 	eve_evt_id int not null,
     primary key (eve_id)
 );
