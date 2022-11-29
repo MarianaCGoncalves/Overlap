@@ -5,8 +5,8 @@
 
 #### Este repositório contêm:
 
-* Proposta 1: PDF e markdown do primeiro relatório para a 1ª entrega. Entregue em 7/10/2022.
-* Proposta 2: PDF e markdown da versão melhorada do 1º relatório. Entregue em 23/10/2022.
+* Proposta 1: PDF e markdown do primeiro relatório para a primeira entrega. Entregue em 7/10/2022.
+* Proposta 2: PDF e markdown da versão melhorada do primeiro relatório. Entregue em 23/10/2022.
 * Base de dados do Projeto: Código para a criação da base de dados (create, populate e queries) e também o documento de base de dados (Dicionário de Dados e Guião de Dados).
 * BottomTest (por alterar): Ficheiros do Android Studio.
 * API: Código para criação da API. 
