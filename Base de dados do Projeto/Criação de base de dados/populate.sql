@@ -101,9 +101,9 @@ insert into ugestatus (ugest_uge_id, ugest_st_id) values (5,1); -- Joana Pinto v
 insert into ugestatus (ugest_uge_id, ugest_st_id) values (6,1); -- Pablo Diaz vai ao evento.
 insert into ugestatus (ugest_uge_id, ugest_st_id) values (7,1); -- Francisco Andrade vai ao evento.
 
-insert into status (st_name) values ('Vai ao evento.'); 
-insert into status (st_name) values ('Não vai ao evento.');
-insert into status (st_name) values ('Cancelou.');
+insert into status (st_name) values ('V'); -- Vai ao evento.
+insert into status (st_name) values ('N'); -- Não vai ao evento.
+insert into status (st_name) values ('C'); -- Cancelou.
 
 insert into evephylocat (eve_phylocat_evephy_id, eve_phylocat_locat_id) values (1,1); --Primeiro evento fisico da ferrari está localizado em Santos.
 insert into evephylocat (eve_phylocat_evephy_id, eve_phylocat_locat_id) values (2,3); --Primeiro evento fisico da Alpine está localizado em Algés.
