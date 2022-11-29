@@ -79,11 +79,11 @@ insert into evefisico (eve_phy_name, eve_phy_desc, eve_phy_dt, eve_phy_eve_id) v
 insert into evefisico (eve_phy_name, eve_phy_desc, eve_phy_dt, eve_phy_eve_id) values ('Beber um café', 'Vamos beber um café no Patio café, para falar sobre as estrategias da Alpine.', to_date('2022.07.25','YYYY.MM.DD'),2); --Evento fisico do grupo Alpine.
 
 -- utilizando a variavel point do PostGIS.
-insert into localizacao (local_name, local_point) values ('Santos', Point(38.707093, -9.152712)); -- Localização Santos.
-insert into localizacao (local_name, local_point) values ('Belém', Point(38.697414, -9.199386));-- Localização Belém.
-insert into localizacao (local_name, local_point) values ('Algés', Point(38.700895, -9.230866));-- Localização Algés.
-insert into localizacao (local_name, local_point) values ('Oeiras', Point(38.696764, -9.314625)); -- Localização Oeiras.
-insert into localizacao (local_name, local_point) values ('Caxias', Point(38.702858, -9.269295));-- Localização Caxias.
+insert into localizacao (locat_name, locat_point) values ('Santos', Point(38.707093, -9.152712)); -- Localização Santos.
+insert into localizacao (locat_name, locat_point) values ('Belém', Point(38.697414, -9.199386));-- Localização Belém.
+insert into localizacao (locat_name, locat_point) values ('Algés', Point(38.700895, -9.230866));-- Localização Algés.
+insert into localizacao (locat_name, locat_point) values ('Oeiras', Point(38.696764, -9.314625)); -- Localização Oeiras.
+insert into localizacao (locat_name, locat_point) values ('Caxias', Point(38.702858, -9.269295));-- Localização Caxias.
 
 insert into usergroupevent (uge_ug_id, uge_eve_id) values (4,1); -- Manuel Gusmão participa no evento da Ferrari.
 insert into usergroupevent (uge_ug_id, uge_eve_id) values (1,1); -- Gustavo Costa participa no evento da Ferrari.
