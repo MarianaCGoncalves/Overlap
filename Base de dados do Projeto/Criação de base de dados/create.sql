@@ -60,7 +60,7 @@ create table eventos (
     eve_name VARCHAR(60) not null,
     eve_ug_id int not null,
     eve_desc VARCHAR(120) not null,
-    eve_date TIMESTAMP not null,
+    eve_ts TIMESTAMP not null,
 	eve_evt_id int not null,
     primary key (eve_id)
 );
@@ -82,7 +82,6 @@ create table eveonline (
     eve_on_id SERIAL not null,
     eve_on_ug_id int not null,
     eve_on_dt date not null,
-    eve_on_ts TIMESTAMP not null,
     eve_on_eve_id int not null,
     primary key (eve_on_id)
 );
@@ -91,7 +90,6 @@ create table evefisico (
     eve_phy_id SERIAL not null,
     eve_phy_ug_id int not null,
     eve_phy_dt date not null,
-    eve_phy_ts TIMESTAMP not null,
     eve_phy_eve_id int not null,
     primary key (eve_phy_id)
 ); 
