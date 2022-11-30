@@ -73,10 +73,10 @@ insert into tipoevento (evt_name) values ('WatchParty Online');
 insert into tipoevento (evt_name) values ('WatchParty');
 insert into tipoevento (evt_name) values ('Encontro Social');
 
-insert into eveonline (eve_on_name, eve_on_desc, eve_on_dt, eve_on_eve_id) values ('WatchParty!', 'WatchParty no grupo de discord! Link do grupo: ',to_date('2022.10.10','YYYY.MM.DD'),3); -- Evento Online da Alfa Romeo.
+insert into eveonline (eve_on_ug_id, eve_on_dt, eve_on_eve_id) values (6,to_date('2022.10.10','YYYY.MM.DD'),2); -- Evento Online da Alfa Romeo.
 
-insert into evefisico (eve_phy_name, eve_phy_desc, eve_phy_dt, eve_phy_eve_id) values ('Assistir a corrida em Santos!', 'Assistir a corrida em Santos que começa às 15 horas. Vamos nos encontrar ao pé da Taska da Txika às 14:45h!', to_date('2022.09.22','YYYY.MM.DD'),1); --Evento fisico do grupo Ferrari.
-insert into evefisico (eve_phy_name, eve_phy_desc, eve_phy_dt, eve_phy_eve_id) values ('Beber um café', 'Vamos beber um café no Patio café, para falar sobre as estrategias da Alpine.', to_date('2022.07.25','YYYY.MM.DD'),2); --Evento fisico do grupo Alpine.
+insert into evefisico (eve_phy_ug_id, eve_phy_dt, eve_phy_eve_id) values (1, to_date('2022.09.22','YYYY.MM.DD'),1); --Evento fisico do grupo Ferrari.
+insert into evefisico (eve_phy_ug_id, eve_phy_dt, eve_phy_eve_id) values (5, to_date('2022.07.25','YYYY.MM.DD'),3); --Evento fisico do grupo Alpine.
 
 -- utilizando a variavel point do PostGIS.
 insert into localizacao (locat_name, locat_point) values ('Santos', Point(38.707093, -9.152712)); -- Localização Santos.
