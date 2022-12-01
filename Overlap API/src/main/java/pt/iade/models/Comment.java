@@ -20,8 +20,8 @@ public class Comment {
     @Column(name = "comm_ug_id") private int commentUserGroupIid;
     @Column(name = "comm_mes_text") private String commentText;
     
-    public Comment(int commentMessageIid, int commentUserGroupIid, String commentText) {
-        this.commentMessageIid = commentMessageIid;
+    public Comment(int commentMessageIid, int commentUserGroupId, String commentText) {
+        this.commentMessageId = commentMessageId;
         this.commentUserGroupIid = commentUserGroupIid;
         this.commentText = commentText;
     }
@@ -30,12 +30,12 @@ public class Comment {
         return commentId;
     }
 
-    public int getCommentMessageIid() {
-        return commentMessageIid;
+    public int getCommentMessageId() {
+        return commentMessageId;
     }
 
-        public int getCommentUserGroupIid() {
-        return commentUserGroupIid;
+        public int getCommentUserGroupId() {
+        return commentUserGroupId;
     }
 
     public String getCommentText() {
