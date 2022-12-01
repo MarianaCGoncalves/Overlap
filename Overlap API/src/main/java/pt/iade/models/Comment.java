@@ -16,13 +16,13 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comm_id") private int commentId;
-    @Column(name = "comm_mes_id") private int commentMessageIid;
-    @Column(name = "comm_ug_id") private int commentUserGroupIid;
+    @Column(name = "comm_mes_id") private int commentMessageId;
+    @Column(name = "comm_ug_id") private int commentUserGroupId;
     @Column(name = "comm_mes_text") private String commentText;
     
-    public Comment(int commentMessageIid, int commentUserGroupId, String commentText) {
+    public Comment(int commentMessageId, int commentUserGroupId, String commentText) {
         this.commentMessageId = commentMessageId;
-        this.commentUserGroupIid = commentUserGroupIid;
+        this.commentUserGroupId = commentUserGroupId;
         this.commentText = commentText;
     }
 
