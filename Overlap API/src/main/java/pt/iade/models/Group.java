@@ -1,6 +1,6 @@
 package pt.iade.models;
 import java.sql.Timestamp;
-import java.time.Instant;
+import java.time.LocalDateTime;  
 import java.util.ArrayList;
 
 import javax.persistence.Column;
@@ -20,7 +20,7 @@ public class Group {
     @Column(name = "gru_use_id") private int creatorId;
     @Column(name = "gru_name") private String groupName;
     @Column(name = "gru_desc") private String groupDescription;
-    @Column(name = "gru_create_age") private Instant groupAge; // idade do grupo: timestamp da criação do grupo menos o timestamp now
+    @Column(name = "gru_create_age") private LocalDateTime groupAge; // data de criação do grupo.
     @Column(name = "gru_last_post_age") private Timestamp LastPost;
     @Column(name = "gru_at") private boolean activity; // 0 - ativo | 1 - inativo
     private ArrayList<User> members;
