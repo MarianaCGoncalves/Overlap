@@ -27,7 +27,7 @@ public class UsersController {
     private Logger logger = LoggerFactory.getLogger(UsersController.class); 
     @Autowired 
     private UsersRepository usersRepository; 
-    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE) 
+    @GetMapping( produces = MediaType.APPLICATION_JSON_VALUE) 
     public Iterable<User> getUsers() { 
         logger.info("Sending all users"); 
         return usersRepository.findAll(); 
