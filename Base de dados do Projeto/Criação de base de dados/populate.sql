@@ -19,16 +19,16 @@ insert into users (use_name, use_acc_age, use_pass, use_mail) values ('José Alm
 insert into users (use_name, use_acc_age, use_pass, use_mail) values ('Frederico Pinheiro', to_date('2022.09.05','YYYY.MM.DD'),'123','pinheiro@gmail.com'); -- Criação do utilizador Frederico Pinheiro.
 insert into users (use_name, use_acc_age, use_pass, use_mail) values ('Júlia Pinheiro', to_date('2022.08.03','YYYY.MM.DD'),'123','juliapinheiro@gmail.com'); -- Criação do utilizador Júlia Pinheiro.
 
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Ferrari','Grupo que junta pessoas com interesse na equipa de f1 Ferrari.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Ferrari.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Mercedes','Grupo que junta pessoas com interesse na equipa de f1 Mercedes.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Mercedes.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo RedBull','Grupo que junta pessoas com interesse na equipa de f1 RedBull.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo RedBull.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Mclaren ','Grupo que junta pessoas com interesse na equipa de f1 Mclaren.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Mclaren.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Alpine','Grupo que junta pessoas com interesse na equipa de f1 Alpine.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Alpine.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Alfa Romeo','Grupo que junta pessoas com interesse na equipa de f1 Alfa Romeo.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Alfa Romeo.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Aston Martin','Grupo que junta pessoas com interesse na equipa de f1 Aston Martin.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Aston Martin.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Haas','Grupo que junta pessoas com interesse na equipa de f1 Haas.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Haas.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Alphatauri','Grupo que junta pessoas com interesse na equipa de f1 Alphatauri.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Alphatauri.
-insert into grupos (gru_name, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Williams','Grupo que junta pessoas com interesse na equipa de f1 Williams.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Williams.
+insert into grupos (gru_name, gru_use_id, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Ferrari',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Ferrari.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Ferrari.
+insert into grupos (gru_name, gru_use_id, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Mercedes',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Mercedes.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Mercedes.
+insert into grupos (gru_name, gru_use_id, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo RedBull',1 ,'Grupo que junta pessoas com interesse na equipa de f1 RedBull.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo RedBull.
+insert into grupos (gru_name, gru_use_id, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Mclaren ',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Mclaren.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Mclaren.
+insert into grupos (gru_name, gru_use_id, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Alpine',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Alpine.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Alpine.
+insert into grupos (gru_name, gru_use_id, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Alfa Romeo',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Alfa Romeo.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Alfa Romeo.
+insert into grupos (gru_name, gru_use_id, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Aston Martin',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Aston Martin.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Aston Martin.
+insert into grupos (gru_name, gru_use_id,  gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Haas',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Haas.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Haas.
+insert into grupos (gru_name, gru_use_id, gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Alphatauri',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Alphatauri.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Alphatauri.
+insert into grupos (gru_name, gru_use_id,  gru_desc, gru_create_age, gru_last_post_age, gru_at) values ('Grupo Williams',1 ,'Grupo que junta pessoas com interesse na equipa de f1 Williams.',to_date('2022.09.9','YYYY.MM.DD'),TO_TIMESTAMP ('2022-09-10 09:30:25', 'YYYY-MM-DD HH24:MI:SS'),TRUE); -- Criação do grupo Williams.
 
 insert into usertag (tu_tag_id, tu_use_id) values (1,1); -- Gustavo Costa - Ferrari
 insert into usertag (tu_tag_id, tu_use_id) values (6,3); -- Francisco Andrade - Alfa Romeo
@@ -65,13 +65,13 @@ insert into mensagem (mes_ug_id, mes_date, mes_text, mes_use_id) values (1, TO_T
 
 insert into comment (comm_mes_id, comm_ug_id, comm_mes_text) values (1,1,'Eu quero! Queres combinar algum sitio para almoçar?'); -- Gustavo responde à mensagem do Manuel. (No grupo da Ferrari).
 
-insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_date) values (4, 'Assistir a corrida em Santos!', 'Assistir a corrida em Santos que começa às 15 horas. Vamos nos encontrar ao pé da Taska da Txika às 14:45h!',3, TO_TIMESTAMP ('2022-09-10 13:23:25', 'YYYY-MM-DD HH24:MI:SS')); --Evento no grupo da Ferrari criado pelo Manuel Gusmão.
-insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_date) values (6,'WatchParty','WatchParty no grupo de discord! Link do grupo:',3, TO_TIMESTAMP ('2022-10-10 14:10:25', 'YYYY-MM-DD HH24:MI:SS')); --Evento no grupo da Alfa Romeo criado pelo Pablo Diaz. )
-insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_date) values (5,'Beber um café', 'Vamos beber um café no Patio café, para falar sobre as estrategias da Alpine.',2, TO_TIMESTAMP ('2022-09-25 14:30:25', 'YYYY-MM-DD HH24:MI:SS')); --Evento no grupo da Alpine criado pelo José Almeida )
-
 insert into tipoevento (evt_name) values ('WatchParty Online');
 insert into tipoevento (evt_name) values ('WatchParty');
 insert into tipoevento (evt_name) values ('Encontro Social');
+
+insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_ts) values (4, 'Assistir a corrida em Santos!', 'Assistir a corrida em Santos que começa às 15 horas. Vamos nos encontrar ao pé da Taska da Txika às 14:45h!',3, TO_TIMESTAMP ('2022-09-10 13:23:25', 'YYYY-MM-DD HH24:MI:SS')); --Evento no grupo da Ferrari criado pelo Manuel Gusmão.
+insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_ts) values (6,'WatchParty','WatchParty no grupo de discord! Link do grupo:',3, TO_TIMESTAMP ('2022-10-10 14:10:25', 'YYYY-MM-DD HH24:MI:SS')); --Evento no grupo da Alfa Romeo criado pelo Pablo Diaz. )
+insert into eventos (eve_ug_id, eve_name, eve_desc, eve_evt_id, eve_ts) values (5,'Beber um café', 'Vamos beber um café no Patio café, para falar sobre as estrategias da Alpine.',2, TO_TIMESTAMP ('2022-09-25 14:30:25', 'YYYY-MM-DD HH24:MI:SS')); --Evento no grupo da Alpine criado pelo José Almeida )
 
 insert into eveonline (eve_on_ug_id, eve_on_dt, eve_on_eve_id) values (6,to_date('2022.10.10','YYYY.MM.DD'),2); -- Evento Online da Alfa Romeo.
 
@@ -93,6 +93,10 @@ insert into usergroupevent (uge_ug_id, uge_eve_id) values (3,2); -- Joana Pinto 
 insert into usergroupevent (uge_ug_id, uge_eve_id) values (5,3); -- Pablo Diaz participa no evento do grupo da Alfa Romeo.
 insert into usergroupevent (uge_ug_id, uge_eve_id) values (2,3); -- Francisco Andrade participa no evento do grupo da Alfa Romeo.
 
+insert into status (st_name) values ('V'); -- Vai ao evento.
+insert into status (st_name) values ('N'); -- Não vai ao evento.
+insert into status (st_name) values ('C'); -- Cancelou.
+
 insert into ugestatus (ugest_uge_id, ugest_st_id) values (1,1); -- Manuel Gusmão vai ao evento.
 insert into ugestatus (ugest_uge_id, ugest_st_id) values (2,1); -- Gustavo Costa vai ao evento.
 insert into ugestatus (ugest_uge_id, ugest_st_id) values (3,1); -- José Almeida vai ao evento.
@@ -101,9 +105,6 @@ insert into ugestatus (ugest_uge_id, ugest_st_id) values (5,1); -- Joana Pinto v
 insert into ugestatus (ugest_uge_id, ugest_st_id) values (6,1); -- Pablo Diaz vai ao evento.
 insert into ugestatus (ugest_uge_id, ugest_st_id) values (7,1); -- Francisco Andrade vai ao evento.
 
-insert into status (st_name) values ('V'); -- Vai ao evento.
-insert into status (st_name) values ('N'); -- Não vai ao evento.
-insert into status (st_name) values ('C'); -- Cancelou.
 
 insert into evephylocat (eve_phylocat_evephy_id, eve_phylocat_locat_id) values (1,1); --Primeiro evento fisico da ferrari está localizado em Santos.
 insert into evephylocat (eve_phylocat_evephy_id, eve_phylocat_locat_id) values (2,3); --Primeiro evento fisico da Alpine está localizado em Algés.
