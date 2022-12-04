@@ -17,7 +17,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "use_id") private int userId;
     @Column(name = "use_name") private String userName;
-    @Column(name = "use_acc_age") private static Instant accountAge; 
+    @Column(name = "use_acc_age") private static LocalDate accountAge; 
     @Column(name = "use_pass") private String password;
     @Column(name = "use_mail") private String mail;
 
@@ -37,7 +37,7 @@ public class User {
         return userName;
     }
 
-    public static Instant getNow() {
+    public static LocalDate getNow() {
         return accountAge;
     }
 
