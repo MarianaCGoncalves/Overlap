@@ -1,7 +1,7 @@
 package pt.iade.Overlap.models;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,28 +12,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "evefisico")
-public class PhysicalEvent extends Event {
+public class PhysicalEvent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "eve_phy_id") private int id;
+    @Column(name = "eve_phy_id") private int evePhyid;
     @Column(name = "eve_phy_ug_id") private int evePhyUgId;
-    @Column(name = "eve_phy_dt") private LocalDateTime dt;
-    @Column(name = "eve_phy_ts") private Timestamp ts;
-    @Column(name = "eve_phy_evt_id") private int evePhyEvtId;
+    @Column(name = "eve_phy_dt") private LocalDate evePhydt;
+    @Column(name = "eve_phy_eve_id") private int evePhyEveId;
     
-    public PhysicalEvent() {
-        super();
-        id = 0;
-    }
-    public PhysicalEvent(int eventUserGroupId,  LocalDateTime eventDate, String eventDescription, String eventName, int id){
-        super(eventUserGroupId, eventName, eventDate, eventDescription);
-        this.id=id;
+    public PhysicalEvent() {}
+    public PhysicalEvent(int evePhyUgId, LocalDate evePhydt, int evePhyEveId ){
+        this.evePhyUgId=evePhyEveId;
+        this.evePhydt=evePhydt;
+        this.evePhyEveId=evePhyEveId;
     }
     public int getId() {
-        return id;
+        return evePhyid;
     }
-    public void setId(int id) {
-        this.id = id;
-    } 
 
 }

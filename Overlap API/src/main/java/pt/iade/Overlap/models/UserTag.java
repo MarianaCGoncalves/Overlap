@@ -17,6 +17,7 @@ public class UserTag {
     @Column(name = "tu_tag_id") private int tagId;
     @Column(name = "tu_use_id") private int userId;
 
+    public UserTag(){}
     public UserTag(int tagId, int userId) {
         this.tagId = tagId;
         this.userId = userId;

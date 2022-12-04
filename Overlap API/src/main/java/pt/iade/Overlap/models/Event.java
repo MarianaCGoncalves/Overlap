@@ -20,7 +20,8 @@ public class  Event {
     @Column(name = "eve_desc") private String eventDescription; //evento criado naquele timestamp
     @Column(name = "eve_date") private LocalDateTime eventDate;
     @Column(name = "eve_type") private String eventType;
-
+    
+    public Event() {}
     public Event(int eventUserGroupId, String eventDescription,
      LocalDateTime eventDate, String eventName) {
         this.eventUserGroupId = eventUserGroupId;
@@ -28,8 +29,7 @@ public class  Event {
         this.eventDescription = eventDescription;
         this.eventName = eventName;
     }
-    public Event() {
-    }
+    
     public int getId() {
         return id;
     }

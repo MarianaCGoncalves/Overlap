@@ -33,7 +33,7 @@ public class GroupsController {
     @Autowired 
     private MessageRepository messageRepository; 
 
-    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE) 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE) 
     public Iterable<Group> getGroups() { 
         logger.info("All Groups"); 
         return groupsRepository.findAll(); 

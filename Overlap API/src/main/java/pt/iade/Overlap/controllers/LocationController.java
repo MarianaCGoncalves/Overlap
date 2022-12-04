@@ -20,6 +20,6 @@ public class LocationController {
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE) 
     public Iterable<Location> getLocation() { 
         logger.info("All locations"); 
-        return locationRepository.findAll(); 
+        return locationRepository.findAll(); //provavelmente n vai ser utilizado.
     } 
 }

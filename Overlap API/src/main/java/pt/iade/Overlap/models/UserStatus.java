@@ -17,6 +17,8 @@ public class UserStatus {
     @Column(name = "ugest_id") private int userstatusId;
     @Column(name = "ugest_uge_id") private int userGroupEventId;
     @Column(name = "ugest_st_id") private int statusId;
+    
+    public UserStatus(){}
     public UserStatus(int userGroupEventId, int statusId) {
         this.userGroupEventId = userGroupEventId;
         this.statusId = statusId;

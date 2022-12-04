@@ -19,7 +19,8 @@ public class Comment {
     @Column(name = "comm_mes_id") private int commentMessageId;
     @Column(name = "comm_ug_id") private int commentUserGroupId;
     @Column(name = "comm_mes_text") private String commentText;
-    
+
+    public Comment(){}
     public Comment(int commentMessageId, int commentUserGroupId, String commentText) {
         this.commentMessageId = commentMessageId;
         this.commentUserGroupId = commentUserGroupId;

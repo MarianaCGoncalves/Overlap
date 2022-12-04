@@ -1,7 +1,7 @@
 package pt.iade.Overlap.models;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;  
-import java.util.ArrayList;
+import java.time.LocalDate; 
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "grupos")
+@Table (name = "grupos")
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,24 +20,25 @@ public class Group {
     @Column(name = "gru_use_id") private int creatorId;
     @Column(name = "gru_name") private String groupName;
     @Column(name = "gru_desc") private String groupDescription;
-    @Column(name = "gru_create_age") private LocalDateTime groupAge; // data de criação do grupo.
+    @Column(name = "gru_create_age") private LocalDate groupAge; // data de criação do grupo.
     @Column(name = "gru_last_post_age") private Timestamp LastPost;
     @Column(name = "gru_at") private boolean activity; // 0 - ativo | 1 - inativo
-    private ArrayList<User> members;
+    
 
     
-    
-    public Group(int creatorId, String groupName, String groupDescription, Instant groupAge, ArrayList<User> members) {
+    public Group(){}
+    public Group(int creatorId, String groupName, String groupDescription, LocalDate groupAge, Timestamp LastPost, boolean activity) {
         this.creatorId = creatorId;
         this.groupName = groupName;
         this.groupDescription = groupDescription;
         this.groupAge = groupAge;
-        this.members = members;
+        this.LastPost= LastPost;
+        this.activity= activity;
     }
     public int getGroupId() {
         return groupId;
     }
-    public Instant getGroupAge() {
+    public LocalDate getGroupAge() {
         return groupAge;
     }
     public int getCreatorId() {
@@ -69,13 +70,6 @@ public class Group {
     }
     public void setActivity(boolean activity) {
         this.activity = activity;
-    }
-    public ArrayList<User> getMembers() {
-        return members;
-    }
-    public void setMembers(ArrayList<User> members) {
-        this.members = members;
-    }
-    
+    }  
    
 }

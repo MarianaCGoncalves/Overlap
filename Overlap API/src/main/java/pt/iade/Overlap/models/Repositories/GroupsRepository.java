@@ -10,7 +10,7 @@ import pt.iade.Overlap.models.Group;
  
 public interface GroupsRepository extends CrudRepository<Group,Integer> {
 
-    @Query(value= "Select * from grupos where gru_name is :name ", nativeQuery= true)
+    @Query(value= "Select * from grupos where gru_name like :name ", nativeQuery= true)
     Optional<Group> findGroupByName(@Param ("name" )String name);
     
  } 

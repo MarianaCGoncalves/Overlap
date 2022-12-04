@@ -18,6 +18,8 @@ public class UserGroup {
     @Column(name = "ug_gru_id") private int groupId;
     @Column(name = "ug_use_id") private int userId;
 
+    public UserGroup(){}
+
     public UserGroup(int groupId, int userId) {
         this.groupId = groupId;
         this.userId = userId;

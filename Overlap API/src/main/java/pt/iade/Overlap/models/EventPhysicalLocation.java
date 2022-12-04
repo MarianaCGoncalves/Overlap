@@ -17,6 +17,7 @@ public class EventPhysicalLocation {
     @Column(name = "eve_phylocat_evephy_id") private int eventPhysicalLocationEventPhysicalId;
     @Column(name = "eve_phylocat_locat_id") private int eventPhysicalLocationLocId;
 
+    public EventPhysicalLocation(){}
     public EventPhysicalLocation(int eventPhysicalLocationId, int eventPhysicalLocationEventPhysicalId, int eventPhysicalLocationLocId){
         this.eventPhysicalLocationEventPhysicalId = eventPhysicalLocationEventPhysicalId;
         this.eventPhysicalLocationLocId = eventPhysicalLocationLocId;

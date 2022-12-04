@@ -23,6 +23,7 @@ public class Message {
     @Column(name = "mes_ug_id") private int messageUserGroupId;
     @Column(name = "mes_date") private LocalDateTime messageDate = LocalDateTime.now();
 
+    public Message(){}
     public Message(int messageUserId, int messageUserGroupId, Timestamp messageDate, String messageText) {
         this.messageUserId = messageUserId;
         this.messageUserGroupId = messageUserGroupId;

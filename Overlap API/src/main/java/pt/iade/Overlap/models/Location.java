@@ -15,34 +15,35 @@ import org.springframework.data.geo.Point;
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "locat_id") private int id;
-    @Column(name = "locat_name") private String name;
-    @Column(name = "locat_point") Point location;
+    @Column(name = "locat_id") private int locat_id;
+    @Column(name = "locat_name") private String locat_name;
+    @Column(name = "locat_point") Point locat_point;
 
-    public Location(int id, String name, Point location) {
-        this.id=id;
-        this.name= name;
-        this.location=location;
+    public Location(){}
+    public Location(int locat_id, String locat_name, Point locat_point) {
+        this.locat_id=locat_id;
+        this.locat_name= locat_name;
+        this.locat_point=locat_point;
     }
     
     public int getId() {
-        return id;
+        return locat_id;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int locat_id) {
+        this.locat_id = locat_id;
     }
     public String getName() {
-        return name;
+        return locat_name;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String locat_name) {
+        this.locat_name = locat_name;
     }
 
     public Point getLocation() {
-        return location;
+        return locat_point;
     }
-    public void setLocation(Point location) {
-        this.location = location;
+    public void setLocation(Point locat_point) {
+        this.locat_point = locat_point;
     }
 
     

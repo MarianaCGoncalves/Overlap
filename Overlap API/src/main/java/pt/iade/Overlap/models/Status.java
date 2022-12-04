@@ -16,7 +16,8 @@ public class Status {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "st_id") private int statusId;
     @Column(name = "st_name") private String status; 
-    
+
+    public Status(){}
     public Status(String status) {
         this.status = status;
     }

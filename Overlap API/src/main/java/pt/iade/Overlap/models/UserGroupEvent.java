@@ -18,6 +18,7 @@ public class UserGroupEvent {
     @Column(name = "uge_ug_id") private int userGroupEventgroupId;
     @Column(name = "uge_eve_id") private int userGroupEventuserId;
     
+    public UserGroupEvent(){}
     
     public UserGroupEvent(int userGroupEventgroupId, int userGroupEventuserId) {
         this.userGroupEventgroupId = userGroupEventgroupId;

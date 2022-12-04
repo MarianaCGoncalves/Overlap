@@ -1,6 +1,6 @@
 package pt.iade.Overlap.models;
 
-import java.time.Instant;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

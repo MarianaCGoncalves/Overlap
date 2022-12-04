@@ -18,6 +18,7 @@ public class GroupTag{
     @Column(name = "tg_tag_id") private int tagId;
     @Column(name = "tg_gru_id") private int groupId;
 
+    public GroupTag(){}
     public GroupTag(int tagId, int userId) {
         this.tagId = tagId;
         this.groupId = userId;

@@ -18,6 +18,7 @@ public class Follow {
     @Column(name = "fol_use_id_a") private int follower;
     @Column(name = "fol_use_id_b") private int followed;
     
+    public Follow(){}
     public Follow(int follower, int followed) {
         this.follower = follower;
         this.followed = followed;
