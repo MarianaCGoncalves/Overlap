@@ -25,12 +25,9 @@ A nossa aplicação tem como público alvo pessoas entre os 18 e 50 anos de idad
 
 Como foi previamente referido, não existem aplicações daí o desenvolvimento da nossa.
 	Algumas aplicações de Fórmula 1 que existem são as aplicações oficiais da FIA (Federação Internacional do Automóvel)
-
-	A aplicação mais importante e mais conhecida é a:
-
+A aplicação mais importante e mais conhecida é a:
 
 * Formula 1:  Onde o utilizador tem acesso a notícias sobre Fórmula 1, as corridas que irão decorrer tal como um Live Feed da corrida a decorrer e apresenta também uma página onde demonstra os pontos que cada piloto e equipa têm.
-
 
 
 ## 3-Guião
@@ -38,7 +35,7 @@ Após entrar na aplicação, o utilizador vai encontrar uma caixa de texto onde 
 Após o registo na aplicação o utilizador poderá ver a Home Page onde se encontram os grupos  aos quais se juntou, caso o utilizador não esteja em nenhum grupo, serão sugeridos grupos onde pessoas com gostos semelhantes se encontram.
 O utilizador encontrará três botões na parte inferior do ecrã, uma lupa, uma casa e um sinal GPS no qual poderá visualizar os eventos que estão a decorrer perto da sua localização.
 Os eventos são criados nos grupos, nos quais os membros definem uma localização para o decorrer do mesmo. 
-Não será preciso um método de verificação que pertence ao grupo, pois o objetivo da aplicação é encontrar pessoas com o mesmo gosto desportivo, mesmo que a pessoa não esteja a utilizar o TeamUP.
+Não será preciso um método de verificação que pertence ao grupo, pois o objetivo da aplicação é encontrar pessoas com o mesmo gosto desportivo, mesmo que a pessoa não esteja a utilizar o Overlap.
 
 ### Breve introdução das personas:
 
@@ -53,6 +50,7 @@ Não será preciso um método de verificação que pertence ao grupo, pois o obj
 * Júlia Pinheiro, 44 anos, apresentadora na XIC. Seguiu os passos do marido e também torce pela Red Bull e Ferrari.
 
 Um domingo, o Gustavo Costa estava a sair do seu turno da manhã do bar SPOT no Bairro Alto, mas não queria nada perder a corrida nem vê-la sozinho. A corrida começa às 15h em Portugal, então o Gustavo instala o Overlap em busca de companhia para ver a corrida. Faz o registo com o seu email, nome e palavra-passe. Após o registo é-lhe apresentada uma tela para selecionar a sua equipa favorita, na qual o Gustavo seleciona a Ferrari e Red Bull, e a Overlap recomenda-lhe grupos que têm como foco principal a equipa da Ferrari. Ao entrar num grupo da Ferrari, encontra Manuel Gusmão, que também está interessado em ver a corrida com alguém e criou um “evento” marcado para às 14:45h relativamente perto de Santos. Vendo o evento do Manuel, o Gustavo interessa-se e decide participar no evento. Manda mensagem no post do Manuel, a perguntar se poderia ir almoçar com ele enquanto via a corrida, combinam o ponto de encontro num restaurante em Santos. No fim de assistirem a corrida, eles seguem o perfil um do outro. 
+
 Joana Pinto saiu da aula Edição e Design às 17h, e ao sair da faculdade encontrou os habituais trabalhadores da UberEats e ao passar por eles, ouviu mencionarem a última corrida de fórmula 1. Joana não conteve o entusiasmo e mencionou o gosto pela equipa Alpine. Entre os funcionários da UberEats estava Maria Pereira, torcedora também da Alpine. Maria perguntou à Joana se estaria interessada em participar num evento organizado pelo José Almeida na Overlap de amanhã, exclusivo para torcedores da Alpine. Joana desconhecia a aplicação Overlap, e procedeu à criação da conta. Num clique junta-se ao grupo da Alpine, e partilha interesse em participar no evento do dia seguinte. No dia seguinte Joana e Maria destinam-se a Algés, a localização onde marcaram o evento. Encontram-se com o José e os outros e decidem ir ao café mais próximo falar das estratégias da Alpine para as próximas corridas.
 
 
@@ -102,7 +100,7 @@ Os membros realizarão cada tarefa em conjunto.
 ![Modelo de Dominio](https://user-images.githubusercontent.com/99985414/197419185-7647822e-1095-434f-9ac7-930511062fed.png)
 
 ## 7- Diagrama de Classes
-
+![BASE DE DADOS _ POO-POO ATUALIZADO drawio](https://user-images.githubusercontent.com/99985414/205518885-5a9fa97c-343e-4d04-8c1c-d521cdae2d0c.png)
 
 ## 8-Bibliografia
 
