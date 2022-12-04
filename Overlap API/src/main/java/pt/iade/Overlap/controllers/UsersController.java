@@ -37,7 +37,7 @@ public class UsersController {
     public User getUserbyName(@RequestParam ("use_name") String use_name) throws NotFoundException {
         logger.info("User with name "+use_name);
         Optional<User> _user = usersRepository.findUserByName(use_name);
-        if (!_user.isPresent()) throw new NotFoundException();
+        if (!_user.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+use_name, "User", "name");
         else return _user.get();
     }
 
@@ -45,7 +45,7 @@ public class UsersController {
     public User getUserbyEmail(@RequestParam ("use_mail") String use_mail) throws NotFoundException {
         logger.info("User with name "+use_mail);
         Optional<User> _user = usersRepository.findUserByName(use_mail);
-        if (!_user.isPresent()) throw new NotFoundException();
+        if (!_user.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+use_mail, "User", "mail");
         else return _user.get();
     }
 
@@ -53,7 +53,7 @@ public class UsersController {
     public User getUser(@PathVariable int use_id) throws NotFoundException {
         logger.info("User with id"+use_id);
         Optional<User> _user = usersRepository.findById(use_id);
-        if (!_user.isPresent()) throw new NotFoundException();
+        if (!_user.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+use_id, "User", "id");
         else return _user.get();
     }
 

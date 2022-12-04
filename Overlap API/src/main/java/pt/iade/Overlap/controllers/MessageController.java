@@ -36,10 +36,10 @@ public class MessageController {
     }
 
     @PutMapping(path = "/edit/{mes_id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String editMessage(@PathVariable int mes_id, @RequestBody Message message){
+    public String editMessage(@PathVariable int mes_id, int gru_id, int use_id, @RequestBody Message message){
         Message editedMessage = messageRepository.findById(mes_id).get();
         editedMessage.setMessageText(message.getMessageText());
-        return "Message edited";        
+        return "Message edited";        //TODO: Query:Procurar pela mensagem num certo grupo criado pelo um user.
     }
 
     @DeleteMapping(path = "delete/{mes_id}", produces = MediaType.APPLICATION_JSON_VALUE)

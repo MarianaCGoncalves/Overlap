@@ -43,7 +43,7 @@ public class GroupsController {
     public Group getGroupById(@PathVariable int gru_id) throws NotFoundException {
         logger.info("User with id"+gru_id);
         Optional<Group> _group = groupsRepository.findById(gru_id);
-        if (!_group.isPresent()) throw new NotFoundException();
+        if (!_group.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+gru_id, "Group", "id");
         else return _group.get();
     }
 
@@ -51,7 +51,7 @@ public class GroupsController {
     public Group getGroupByName(@PathVariable String gru_name) throws NotFoundException {
         logger.info("User with id"+gru_name);
         Optional<Group> _group = groupsRepository.findGroupByName(gru_name);
-        if (!_group.isPresent()) throw new NotFoundException();
+        if (!_group.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+gru_name, "Group", "name");
         else return _group.get();
     }
 

@@ -39,7 +39,7 @@ public class TagsController {
     public Tag getTagByName(@PathVariable String tag_name) throws NotFoundException {
         logger.info("Tag with name "+tag_name);
         Optional<Tag> _tag = tagsRepository.findTagByName(tag_name);
-        if (!_tag.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(tag_name, tag_name, tag_name);
+        if (!_tag.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+tag_name, "Tag", "name");
         else return _tag.get();
     }
 
