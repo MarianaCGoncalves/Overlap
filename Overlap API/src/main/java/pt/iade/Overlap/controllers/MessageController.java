@@ -30,23 +30,23 @@ public class MessageController {
 
     @PostMapping(path = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public Message newMessage(@RequestBody Message message){
-    logger.info("MessageId: " +message.getMessageId());
-    logger.info("Content of the message: "+message.getMessageText());
-    return messageRepository.save(message);
+        logger.info("MessageId: " +message.getMessageId());
+        logger.info("Content of the message: "+message.getMessageText());
+        return messageRepository.save(message);
     }
 
     @PutMapping(path = "/edit/{mes_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String editMessage(@PathVariable int mes_id, @RequestBody Message message){
         Message editedMessage = messageRepository.findById(mes_id).get();
         editedMessage.setMessageText(message.getMessageText());
-        return "Message edited";
+        return "Message edited";        
     }
 
     @DeleteMapping(path = "delete/{mes_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String deleteMessage(@PathVariable int mes_id){
         Message deletedMessage = messageRepository.findById(mes_id).get();
         messageRepository.delete(deletedMessage);
-        return "Delete message with the id" + mes_id;
+        return "Delete message with the id" + mes_id;      
         
     }
 }

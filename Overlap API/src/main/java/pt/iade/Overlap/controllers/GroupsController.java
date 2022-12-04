@@ -88,6 +88,6 @@ public class GroupsController {
     public String deleteGroup(@PathVariable int gru_id){
         Group deleteUser = groupsRepository.findById(gru_id).get();
         groupsRepository.delete(deleteUser);
-        return "Delete user with the id "+gru_id;
+        return "Delete group with the id "+gru_id;
         }
 }
