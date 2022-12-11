@@ -1,29 +1,33 @@
 package com.example.overlapandroidstudio;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Group {
-     private int creatorId;
-     private String groupName;
-     private String groupDescription;
-     private LocalDate groupAge; // idade do grupo: timestamp da criação do grupo menos o timestamp now
-     private Timestamp LastPost;
-     private boolean activity; // 0 - ativo | 1 - inativo
-     private ArrayList<User> members;
+    private int groupId;
+    private int creatorId;
+    private String groupName;
+    private String groupDescription;
+    private Date groupAge; // data de criação do grupo.
+    private Timestamp LastPost;
+    private boolean activity; // 0 - ativo | 1 - inativo
 
 
 
-    public Group(int creatorId, String groupName, String groupDescription, LocalDate groupAge, ArrayList<User> members) {
-
+    public Group(){}
+    public Group(int creatorId, String groupName, String groupDescription, Date groupAge, Timestamp LastPost, boolean activity) {
         this.creatorId = creatorId;
         this.groupName = groupName;
         this.groupDescription = groupDescription;
         this.groupAge = groupAge;
-        this.members = members;
+        this.LastPost= LastPost;
+        this.activity= activity;
     }
-
-    public LocalDate getGroupAge() {
+    public int getGroupId() {
+        return groupId;
+    }
+    public Date getGroupAge() {
         return groupAge;
     }
     public int getCreatorId() {
@@ -56,13 +60,5 @@ public class Group {
     public void setActivity(boolean activity) {
         this.activity = activity;
     }
-    public ArrayList<User> getMembers() {
-        return members;
-    }
-    public void setMembers(ArrayList<User> members) {
-        this.members = members;
-    }
-
-
 }
 

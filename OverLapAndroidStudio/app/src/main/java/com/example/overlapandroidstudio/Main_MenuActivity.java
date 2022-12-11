@@ -37,22 +37,17 @@ public class Main_MenuActivity extends AppCompatActivity {
         GrouplView = (ListView)findViewById(R.id.GroupListView);
         try { RetrofitMainMenuInterface retrofitMainMenuInterface=
                 RetrofitService.getRetrofit().create(RetrofitMainMenuInterface.class);
-            retrofitMainMenuInterface.GetAllGroups().enqueue(new Callback<Iterable<Group>>() {
+            retrofitMainMenuInterface.GetAllGroups().enqueue(new Callback<ArrayList<Group>>() {
                 @Override
-                public void onResponse(Call<Iterable<Group>> call, Response<Iterable<Group>> response) {
-                    ArrayList<Group> groupis = new ArrayList<>();
-                    for (Group group: response.body()) {
-                        groupis.add(group);
-                    }
+                public void onResponse(Call<ArrayList<Group>> call, Response<ArrayList<Group>> response) {
                     GrouplAdapter = new GroupListAdapter(
-                            Main_MenuActivity.this,
-                            groupis);
+                            Main_MenuActivity.this, response.body());
 
                     GrouplView.setAdapter(GrouplAdapter);
                 }
 
                 @Override
-                public void onFailure(Call<Iterable<Group>> call, Throwable t) {
+                public void onFailure(Call<ArrayList<Group>> call, Throwable t) {
 
                 }
             });

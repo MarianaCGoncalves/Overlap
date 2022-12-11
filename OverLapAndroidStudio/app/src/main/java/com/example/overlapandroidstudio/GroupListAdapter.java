@@ -55,7 +55,7 @@ public class GroupListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.group_list_item, parent, false);
             viewHolder.txtName = (TextView) convertView.findViewById(R.id.gruName);
             viewHolder.txtDesc = (TextView) convertView.findViewById(R.id.gruDesc);
-            viewHolder.txtNum = (TextView) convertView.findViewById(R.id.gruNum);
+          //  viewHolder.txtNum = (TextView) convertView.findViewById(R.id.gruNum);
             viewHolder.txtAct = (TextView) convertView.findViewById(R.id.gruAct);
 
             result=convertView;
@@ -68,7 +68,7 @@ public class GroupListAdapter extends BaseAdapter {
 
         viewHolder.txtName.setText(Groups.get(position).getGroupName());
         viewHolder.txtDesc.setText("description: " + Groups.get(position).getGroupDescription());
-        viewHolder.txtNum.setText("Number of members " + Groups.get(position).getMembers().size());
+       // viewHolder.txtNum.setText("Number of members " + Groups.get(position).getMembers().size());
         viewHolder.txtAct.setText("Active group?: " + Groups.get(position).isActivity());
 
 

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ public class UserTagsMainActivity extends AppCompatActivity {
     ListView TaglView;
     TagListAdapter TaglAdapter;
     Button button_tag_continue;
+    ArrayList<Tag> tagstorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,24 +31,32 @@ public class UserTagsMainActivity extends AppCompatActivity {
         TaglView = (ListView)findViewById(R.id.User_tag_ListView);
         try { RetrofitUserTags retrofitUserTags =
                 RetrofitService.getRetrofit().create(RetrofitUserTags.class);
-            retrofitUserTags.GetTags().enqueue(new Callback<Iterable<Tag>>() {
+                retrofitUserTags.GetTags().enqueue(new Callback<ArrayList<Tag>>() {
                 @Override
-                public void onResponse(Call<Iterable<Tag>> call, Response<Iterable<Tag>> response) {
-                    ArrayList<com.example.overlapandroidstudio.Tag> tagis = new ArrayList<>();
-                    for (Tag tag: response.body()) {
-                        tagis.add(tag);
-                    }
-                    TaglAdapter= new TagListAdapter(UserTagsMainActivity.this, tagis);
+                public void onResponse(Call<ArrayList<Tag>> call, Response<ArrayList<Tag>> response) {
+                    tagstorage= response.body();
+                    TaglAdapter= new TagListAdapter(UserTagsMainActivity.this, tagstorage);
                     TaglView.setAdapter(TaglAdapter);
                 }
 
                 @Override
-                public void onFailure(Call<Iterable<Tag>> call, Throwable t) {
+                public void onFailure(Call<ArrayList<Tag>> call, Throwable t) {
 
                 }
             });
 
-        }catch (Exception e){}
+        }catch (Exception e){
+
+        }
+
+        TaglView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                tagstorage.get(position).setIsselec(!tagstorage.get(position).isIsselec());
+
+            }
+        });
+
 
         button_tag_continue = findViewById(R.id.from_tag_go_menu);
         button_tag_continue.setOnClickListener(view -> {
