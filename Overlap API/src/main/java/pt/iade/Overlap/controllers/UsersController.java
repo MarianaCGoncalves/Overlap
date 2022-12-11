@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException.NotFound;
 
 import pt.iade.Overlap.models.User;
 import pt.iade.Overlap.models.Repositories.UsersRepository;
@@ -88,7 +87,7 @@ public class UsersController {
         logger.info("Delete user with id "+id);
         Optional<User> deletedUser = usersRepository.findById(id);
         if(!deletedUser.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+id, "User", "id");
-        else usersRepository.delete(deleteUser(id));
+        else usersRepository.deleteById(id);
         return deletedUser.get();
         
         // User deletedUser = usersRepository.findById(id).get();
