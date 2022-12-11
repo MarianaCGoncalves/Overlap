@@ -67,6 +67,7 @@ public class GroupsController {
         updatedGroup.setCreatorId(group.getCreatorId()); //moderador
         updatedGroup.setGroupName(group.getGroupName());
         updatedGroup.setGroupDescription(group.getGroupDescription());
+        groupsRepository.save(updatedGroup);
         return "Group updated";
     }
 

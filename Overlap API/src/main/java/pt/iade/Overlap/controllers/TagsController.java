@@ -27,7 +27,7 @@ public class TagsController {
         return tagsRepository.findAll(); 
     } 
 
-    @GetMapping (path = "/{tag_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping (path = "/id/{tag_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Tag getTag(@PathVariable int tag_id) throws NotFoundException {
         logger.info("Tag with id"+tag_id);
         Optional<Tag> _tag = tagsRepository.findById(tag_id);
@@ -35,7 +35,7 @@ public class TagsController {
         else return _tag.get();
     }
 
-    @GetMapping (path = "/{tag_name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping (path = "/name/{tag_name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Tag getTagByName(@PathVariable String tag_name) throws NotFoundException {
         logger.info("Tag with name "+tag_name);
         Optional<Tag> _tag = tagsRepository.findTagByName(tag_name);

@@ -17,16 +17,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "use_id") private int userId;
     @Column(name = "use_name") private String userName;
-    @Column(name = "use_acc_age") private static LocalDate accountAge; 
+    @Column(name = "use_acc_age") private LocalDate accountAge = LocalDate.now(); 
     @Column(name = "use_pass") private String password;
     @Column(name = "use_mail") private String mail;
 
     public User() {}
 
-    public User(String userName, String password, String mail) {
+    public User(String userName, String password, String mail, LocalDate accountAge) {
         this.userName = userName;
         this.password = password;
         this.mail = mail;
+        this.accountAge= accountAge;
+
     }
 
     public int getId() {
@@ -37,7 +39,7 @@ public class User {
         return userName;
     }
 
-    public static LocalDate getNow() {
+    public LocalDate getNow() {
         return accountAge;
     }
 
