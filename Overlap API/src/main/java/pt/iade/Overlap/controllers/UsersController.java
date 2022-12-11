@@ -95,6 +95,14 @@ public class UsersController {
         // usersRepository.delete(deletedUser);
         // return deletedUser;
     }
+
+    @PostMapping(path = "/login" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer loginUser(@RequestBody User user) throws NotFoundException {
+        logger.info("Loging in");
+        Optional<User> _user = usersRepository.LoginUser(user.getMail(), user.getPassword());
+        if (!_user.isPresent()) throw new NotFoundException();
+        else return _user.get().getId();
+    }
 }
     
     //TODO: mudar de equipa putmapping path = "/changeTag". PUTMAPPING.

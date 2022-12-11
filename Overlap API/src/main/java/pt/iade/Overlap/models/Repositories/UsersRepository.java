@@ -22,5 +22,8 @@ public interface UsersRepository extends CrudRepository<User,Integer> {
     @Query(value = "Select * from users where use_mail like :mail", nativeQuery = true)
     Iterable<User> findUserByEmail(@Param("mail") String mail);
 
+    @Query(value= "select * from users where use_email like :mail and use_pass like :pass", nativeQuery = true)
+    Optional<User> LoginUser(@Param("mail") String mail, @Param("pass") String pass);
+
     
 }
