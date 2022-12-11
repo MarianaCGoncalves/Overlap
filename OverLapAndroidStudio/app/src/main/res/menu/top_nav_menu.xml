@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/general_settings_button"
+        android:icon="@drawable/ic_baseline_top_nav_options_icon"
+        android:title=""
+        app:showAsAction= "ifRoom"
+        />
+
+    <item
+        android:id="@+id/user_profile_button"
+        android:title="Profile"
+        app:showAsAction= "never"/>
+
+    <item
+        android:id="@+id/general_notifications_button"
+        android:title="Notifications"
+        app:showAsAction= "never"/>
+
+    <item
+        android:id="@+id/general_sign_out_button"
+        android:title="Sign Out"
+        app:showAsAction= "never"/>
+
+</menu>

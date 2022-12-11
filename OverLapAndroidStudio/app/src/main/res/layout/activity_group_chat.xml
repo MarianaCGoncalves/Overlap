@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f1eff0"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+
+    <EditText
+        android:id="@+id/msg_text"
+        android:layout_width="300dp"
+        android:layout_height="72dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="650dp"
+        android:background="@android:color/white"
+        android:gravity="start"
+        android:hint="Write your message here"
+        android:inputType="textMultiLine"
+        android:minLines="6"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/msg_send"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="3dp"
+        android:layout_toRightOf="@+id/msg_text"
+        android:background="@android:drawable/ic_menu_send"
+        android:backgroundTint="@color/black" />
+
+    <ImageButton
+        android:id="@+id/GroupChatBackButton"
+        android:layout_width="81dp"
+        android:layout_height="54dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="97dp"
+        android:layout_height="33dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="185dp"
+        android:layout_toEndOf="@+id/GroupChatBackButton"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/GroupSettingsTextView"
+        android:layout_width="81dp"
+        android:layout_height="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="19dp"
+        android:text="Settings"
+        android:textSize="22sp" />
+
+</RelativeLayout>
