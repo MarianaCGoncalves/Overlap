@@ -92,9 +92,9 @@ A API vai permitir a comunicação entre a base de dados e a aplicação móvel.
 * Swagger: https://swagger.io/
 
 ## 5-Planeamento e calendarização
-![Gráfico de Gantt](https://user-images.githubusercontent.com/99985414/197419120-f6f43024-4839-44cc-b5d2-2b93a6847acd.png)
+<img width="702" alt="Captura de ecrã_20221212_200217" src="https://user-images.githubusercontent.com/99985414/207143097-1f6a9a0a-6f10-4701-8ad6-33eb213470b8.png">
 
-Os membros realizarão cada tarefa em conjunto.
+Gráfico de Gantt do progresso do Overlap (através do ClickUp).
 
 ## 6-Modelo do Domínio
 ![Modelo de Dominio](https://user-images.githubusercontent.com/99985414/197419185-7647822e-1095-434f-9ac7-930511062fed.png)
@@ -102,14 +102,13 @@ Os membros realizarão cada tarefa em conjunto.
 ## 7- Diagrama de Classes
 ![BASE DE DADOS _ POO-POO ATUALIZADO drawio](https://user-images.githubusercontent.com/99985414/205518885-5a9fa97c-343e-4d04-8c1c-d521cdae2d0c.png)
 
-## 8-Bibliografia
+## 8- Dicionário de Dados (Base de Dados)
+	EM BREVE
 
-MatchApp: https://play.google.com/store/apps/details?id=com.justteamup.matchapp&hl=en_US&gl=US
+## 9- Manual do Utilizador
+	EM BREVE
 
-SportsBuddy: https://play.google.com/store/apps/details?id=org.buddyapps.sportsbuddy&hl=pt_PT&gl=US
-
-Sporty:
-https://apps.apple.com/pt/app/sporty/id1585635348?l=en
+## 10-Bibliografia
 
 SpringBoot: 
 https://spring.io/projects/spring-boot
@@ -125,6 +124,3 @@ https://www.pgadmin.org/download/
 
 AndroidStudio:
 https://developer.android.com/studio
-
-Gráfico deGantt: 
-https://www.officetimeline.com/online/gantt-chart-maker
