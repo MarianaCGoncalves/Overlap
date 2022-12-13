@@ -47,7 +47,7 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/G_name"
         android:layout_width="97dp"
         android:layout_height="33dp"
         android:layout_marginStart="68dp"

@@ -28,6 +28,8 @@ public class Main_MenuActivity extends AppCompatActivity {
     BottomNavigationView buttom_nav_option;
     ListView GrouplView;
     GroupListAdapter GrouplAdapter;
+    ArrayList<Group> groupstorage;
+    Group groupselected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +39,11 @@ public class Main_MenuActivity extends AppCompatActivity {
         GrouplView = (ListView)findViewById(R.id.GroupListView);
         try { RetrofitMainMenuInterface retrofitMainMenuInterface=
                 RetrofitService.getRetrofit().create(RetrofitMainMenuInterface.class);
-            retrofitMainMenuInterface.GetAllGroups().enqueue(new Callback<ArrayList<Group>>() {
+                retrofitMainMenuInterface.GetAllGroups().enqueue(new Callback<ArrayList<Group>>() {
                 @Override
                 public void onResponse(Call<ArrayList<Group>> call, Response<ArrayList<Group>> response) {
-                    GrouplAdapter = new GroupListAdapter(
-                            Main_MenuActivity.this, response.body());
-
+                    groupstorage= response.body();
+                    GrouplAdapter= new GroupListAdapter(Main_MenuActivity.this, groupstorage);
                     GrouplView.setAdapter(GrouplAdapter);
                 }
 
@@ -59,9 +60,19 @@ public class Main_MenuActivity extends AppCompatActivity {
         GrouplView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                groupselected= groupstorage.get(position);
+                String groupname= groupselected.getGroupName();
+                int groupid= groupselected.getGroupId();
+                String groupdescription= groupselected.getGroupDescription();
                 Toast.makeText(Main_MenuActivity.this,
-                        "Name: Pipis " ,
+                        "Name: Pipis " + position,
                         Toast.LENGTH_SHORT).show();
+                Intent IntentChatGroup = new Intent(Main_MenuActivity.this, GroupChatActivity.class);
+                IntentChatGroup.putExtra("groupname", groupname);
+                IntentChatGroup.putExtra("groupid", groupid);
+                IntentChatGroup.putExtra("groupdescription", groupdescription);
+                startActivity(IntentChatGroup);
+
             }
         });
 
@@ -103,7 +114,6 @@ public class Main_MenuActivity extends AppCompatActivity {
         inflater.inflate(R.menu.top_nav_menu, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
