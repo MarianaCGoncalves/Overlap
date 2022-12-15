@@ -10,24 +10,21 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class GroupListAdapter extends BaseAdapter {
+public class FriendListAdapter extends BaseAdapter {
 
     Context context;
-    protected ArrayList<Group> Groups;
+    protected ArrayList<User> Friends;
 
 
-
-
-    public GroupListAdapter(Context context, ArrayList<Group> groups)
+    public FriendListAdapter(Context context, ArrayList<User> friends)
     {
         this.context = context;
-        this.Groups= groups;
-
+        this.Friends = friends;
     }
 
     @Override
     public int getCount() {
-        return Groups.size();
+        return Friends.size();
     }
 
     @Override
@@ -52,11 +49,10 @@ public class GroupListAdapter extends BaseAdapter {
 
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.group_list_item, parent, false);
-            viewHolder.txtName = (TextView) convertView.findViewById(R.id.gruName);
-            viewHolder.txtDesc = (TextView) convertView.findViewById(R.id.gruDesc);
-          //  viewHolder.txtNum = (TextView) convertView.findViewById(R.id.gruNum);
-            viewHolder.txtAct = (TextView) convertView.findViewById(R.id.gruAct);
+            convertView = inflater.inflate(R.layout.tag_list_item, parent, false);
+            viewHolder.txtName = (TextView) convertView.findViewById(R.id.itemName);
+            viewHolder.txtState = (TextView) convertView.findViewById(R.id.itemState);
+            //viewHolder.icon = (ImageView) convertView.findViewById(R.id.itemIcon);
 
             result=convertView;
 
@@ -66,11 +62,8 @@ public class GroupListAdapter extends BaseAdapter {
             result=convertView;
         }
 
-        viewHolder.txtName.setText(Groups.get(position).getGroupName());
-        viewHolder.txtDesc.setText("description: " + Groups.get(position).getGroupDescription());
-       // viewHolder.txtNum.setText("Number of members " + Groups.get(position).getMembers().size());
-        viewHolder.txtAct.setText("Active group?: " + Groups.get(position).isActivity());
-
+        viewHolder.txtName.setText(Friends.get(position).getUserName());
+        //viewHolder.icon.setImageResource(images[position]);
 
         return convertView;
     }
@@ -78,9 +71,9 @@ public class GroupListAdapter extends BaseAdapter {
     private static class ViewHolder {
 
         TextView txtName;
-        TextView txtDesc;
-        TextView txtNum;
-        TextView txtAct;
+        TextView txtState;
+        //ImageView icon;
 
     }
 }
+

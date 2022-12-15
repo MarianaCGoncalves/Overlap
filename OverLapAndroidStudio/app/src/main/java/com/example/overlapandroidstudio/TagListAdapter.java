@@ -52,7 +52,7 @@ public class TagListAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.tag_list_item, parent, false);
             viewHolder.txtName = (TextView) convertView.findViewById(R.id.itemName);
-            //viewHolder.txtVersion = (TextView) convertView.findViewById(R.id.itemState);
+            viewHolder.txtState = (TextView) convertView.findViewById(R.id.itemState);
             //viewHolder.icon = (ImageView) convertView.findViewById(R.id.itemIcon);
 
             result=convertView;
@@ -64,7 +64,7 @@ public class TagListAdapter extends BaseAdapter {
         }
 
         viewHolder.txtName.setText(Tags.get(position).getTagName());
-        //viewHolder.txtVersion.setText(""+numbers[position]);
+        viewHolder.txtState.setText(""+Tags.get(position).isIsselec());
         //viewHolder.icon.setImageResource(images[position]);
 
         return convertView;
@@ -73,7 +73,7 @@ public class TagListAdapter extends BaseAdapter {
     private static class ViewHolder {
 
         TextView txtName;
-        TextView txtVersion;
+        TextView txtState;
         //ImageView icon;
 
     }

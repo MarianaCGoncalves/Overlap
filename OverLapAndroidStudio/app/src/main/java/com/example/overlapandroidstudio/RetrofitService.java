@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitService {
     public static Retrofit getRetrofit(){
-                    Gson gson = new GsonBuilder().create();
+                    Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
 
                         return new Retrofit.Builder()
                                         .baseUrl("http://10.0.2.2:8080/")

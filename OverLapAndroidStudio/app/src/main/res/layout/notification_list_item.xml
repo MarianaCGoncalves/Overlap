@@ -24,6 +24,7 @@
         android:layout_alignStart="@+id/notificationdate"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
+        android:inputType="textMultiLine"
         android:maxLines="1"
         android:text="text"
         android:textSize="14sp" />
