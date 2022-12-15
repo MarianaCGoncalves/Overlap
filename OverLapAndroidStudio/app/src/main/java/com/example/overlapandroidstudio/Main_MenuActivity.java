@@ -90,7 +90,7 @@ public class Main_MenuActivity extends AppCompatActivity {
             switch(item.getItemId())
             {
                 case R.id.bottom_nav_home:
-                    return true;
+                    return false;
                 case R.id.bottom_nav_friends:
                     Intent toFriends = new Intent(getApplicationContext(),FriendsActivity.class);
                     startActivity(toFriends);
