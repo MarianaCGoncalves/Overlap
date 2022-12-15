@@ -1,5 +1,5 @@
 package pt.iade.Overlap.models.views;
 
-public class EventView {
+public interface EventView {
     
 }

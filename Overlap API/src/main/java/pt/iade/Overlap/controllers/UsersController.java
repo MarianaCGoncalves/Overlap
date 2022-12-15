@@ -97,11 +97,10 @@ public class UsersController {
 
     @PostMapping(path = "/login" , produces = MediaType.APPLICATION_JSON_VALUE)
     public Integer loginUser(@RequestBody User user) throws NotFoundException {
-        logger.info("Loging in");
+        logger.info("Logging in");
         Optional<User> _user = usersRepository.LoginUser(user.getMail(), user.getPassword());
-        if (!_user.isPresent()) throw new NotFoundException();
+        if (!_user.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+user.getMail() + user.getPassword(), "User", "email and password");
         else return _user.get().getId();
     }
 }
     
-    //TODO: mudar de equipa putmapping path = "/changeTag". PUTMAPPING.
