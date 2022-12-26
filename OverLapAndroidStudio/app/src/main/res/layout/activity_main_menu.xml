@@ -7,6 +7,19 @@
     tools:context=".Main_MenuActivity">
 
 
+    <EditText
+        android:id="@+id/group_searchEditText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search groups..."
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_menu_bottom_nav"
         android:layout_width="match_parent"
@@ -21,13 +34,13 @@
 
     <ListView
         android:id="@+id/GroupListView"
-        android:layout_width="344dp"
-        android:layout_height="576dp"
+        android:layout_width="348dp"
+        android:layout_height="502dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintTop_toBottomOf="@+id/group_searchEditText"
+        app:layout_constraintVertical_bias="0.125" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
