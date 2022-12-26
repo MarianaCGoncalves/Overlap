@@ -3,12 +3,15 @@ package com.example.overlapandroidstudio;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,6 +30,7 @@ import retrofit2.Response;
 public class Main_MenuActivity extends AppCompatActivity {
     BottomNavigationView buttom_nav_option;
     ListView GrouplView;
+    EditText groupsearch;
     GroupListAdapter GrouplAdapter;
     ArrayList<Group> groupstorage;
     Group groupselected;
@@ -56,6 +60,26 @@ public class Main_MenuActivity extends AppCompatActivity {
         }catch(Exception e){
 
         }
+
+        groupsearch= (EditText)findViewById(R.id.group_searchEditText);
+
+        groupsearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+                Main_MenuActivity.this.GrouplAdapter.getFilter().filter(cs);
+            }
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                                          int arg3) {
+                // TODO Auto-generated method stub
+
+            }
+            @Override
+            public void afterTextChanged(Editable arg0) {
+                // TODO Auto-generated method stub
+            }
+        });
 
         GrouplView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
