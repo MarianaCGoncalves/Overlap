@@ -61,6 +61,29 @@ public class Main_MenuActivity extends AppCompatActivity {
 
         }
 
+<<<<<<< Updated upstream
+=======
+        groupsearch= (EditText)findViewById(R.id.group_searchEditText);
+
+        groupsearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+               // Main_MenuActivity.this.GrouplAdapter.getFilter().filter(cs);
+            }
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                                          int arg3) {
+                // TODO Auto-generated method stub
+
+            }
+            @Override
+            public void afterTextChanged(Editable arg0) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+>>>>>>> Stashed changes
         GrouplView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -91,7 +114,7 @@ public class Main_MenuActivity extends AppCompatActivity {
                     overridePendingTransition(0,0);
                     return true;
                 case R.id.bottom_nav_maps:
-                    Intent toMaps = new Intent(getApplicationContext(), GroupChatActivity.class/*MapsActivity.class*/);
+                    Intent toMaps = new Intent(getApplicationContext(), MapsActivity.class);
                     startActivity(toMaps);
                     overridePendingTransition(0,0);
                     return true;
