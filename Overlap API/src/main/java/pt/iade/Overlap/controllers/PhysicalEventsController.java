@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pt.iade.Overlap.models.PhysicalEvent;
+
 import pt.iade.Overlap.models.Repositories.PhysicalEventRepository;
+import pt.iade.Overlap.models.views.PhysicalEventEveView;
 
 @RestController 
 @RequestMapping(path = "/api/physicalevents") 
@@ -18,9 +19,9 @@ public class PhysicalEventsController {
     @Autowired 
     private PhysicalEventRepository physicaleventsRepository; 
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE) 
-    public Iterable<PhysicalEvent> getPhysicalEvents() { 
+    public Iterable<PhysicalEventEveView> getPhysicalEvents() { 
         logger.info("All physical events"); 
-        return physicaleventsRepository.findAll(); 
+        return physicaleventsRepository.getPhysicalEvents(); 
     } 
 
     //TODO: apenas aparecer os eventos fisicos de um certo grupo. 

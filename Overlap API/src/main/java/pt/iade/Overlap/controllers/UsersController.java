@@ -1,6 +1,7 @@
 package pt.iade.Overlap.controllers;
 
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -16,9 +17,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException.NotFound;
 
+
+import pt.iade.Overlap.models.Group;
+import pt.iade.Overlap.models.Tag;
 import pt.iade.Overlap.models.User;
+import pt.iade.Overlap.models.UserGroup;
+import pt.iade.Overlap.models.UserTag;
+import pt.iade.Overlap.models.Repositories.UserGroupRepository;
+import pt.iade.Overlap.models.Repositories.UserTagRepository;
 import pt.iade.Overlap.models.Repositories.UsersRepository;
 
 @RestController 
@@ -27,6 +34,11 @@ public class UsersController {
     private Logger logger = LoggerFactory.getLogger(UsersController.class); 
     @Autowired 
     private UsersRepository usersRepository; 
+    @Autowired 
+    private UserGroupRepository usergroupRepository;
+    @Autowired 
+    private UserTagRepository UsertagsRepository; 
+    
     @GetMapping( produces = MediaType.APPLICATION_JSON_VALUE) 
     public Iterable<User> getUsers() { 
         logger.info("Sending all users"); 
@@ -103,6 +115,32 @@ public class UsersController {
         if (!_user.isPresent()) throw new NotFoundException();
         else return _user.get().getId();
     }
+
+    @PostMapping(path = "/group/add/{use_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<Group> CreateUserGroup(@PathVariable int use_id, @RequestBody ArrayList<Group> groups) throws NotFoundException {
+        logger.info("Adding user group "+use_id);
+        Optional<User> user = usersRepository.findById(use_id);
+         if (!user.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+use_id, "User", "id");
+        for (Group group : groups) {
+             usergroupRepository.save(new UserGroup(group.getGroupId(), use_id));
+        }
+         return groups;
+     }
+
+     @PostMapping(path = "/tag/add/{use_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<Tag> CreateUserTag(@PathVariable int use_id, @RequestBody ArrayList<Tag> tags) throws NotFoundException {
+        logger.info("Adding user tag "+use_id);
+        Optional<User> user = usersRepository.findById(use_id);
+        if (!user.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+use_id, "User", "id");
+        for (Tag tag : tags) {
+            UsertagsRepository.save(new UserTag(tag.getTagId(), use_id));
+        }
+        return tags;
+
+    }
+
+
+
 }
     
-    //TODO: mudar de equipa putmapping path = "/changeTag". PUTMAPPING.
+    

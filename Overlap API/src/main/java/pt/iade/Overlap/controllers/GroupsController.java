@@ -71,8 +71,8 @@ public class GroupsController {
         return "Group updated";
     }
 
-    @PutMapping(path = "/update/activity", produces = MediaType.APPLICATION_JSON_VALUE)
-    public boolean updateActivity(@PathVariable boolean gru_at, int gru_id) {
+    @PutMapping(path = "/update/activity/{gru_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean updateActivity(@PathVariable int gru_id) {
         Optional<Message> LastPost = messageRepository.getLastMessage(gru_id);
 
         if(LastPost.isEmpty()){
@@ -80,9 +80,9 @@ public class GroupsController {
         }
         Message message = LastPost.get();
         boolean ONtime = LocalDateTime.now().minusMonths(3).isAfter(message.getMessageDate());
-        gru_at = !ONtime;
+        
 
-        return gru_at; // gru_at = true, grupo está ativo. se gru_at = false entao o grupo esta inativo.
+        return !ONtime; 
     }
 
     @DeleteMapping(path = "/delete/{gru_id}", produces = MediaType.APPLICATION_JSON_VALUE)
