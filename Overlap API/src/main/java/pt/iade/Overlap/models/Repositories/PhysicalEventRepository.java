@@ -3,12 +3,14 @@ package pt.iade.Overlap.models.Repositories;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import pt.iade.Overlap.models.PhysicalEvent;
 import pt.iade.Overlap.models.views.PhysicalEventEveView; 
  
 public interface PhysicalEventRepository extends CrudRepository<PhysicalEvent,Integer> {
 
+<<<<<<< HEAD
 
     String getAllInfoPhysicalEvents = "select use_name as username, gru_id as groupid, gru_use_id as usergroupid, gru_name as groupname, gru_desc as groupdescription, "
     +"gru_create_age as groupbd, gru_last_post_age as lastpost, gru_at as activity, ug_id as usergroupid, "
@@ -24,4 +26,14 @@ public interface PhysicalEventRepository extends CrudRepository<PhysicalEvent,In
 
     @Query(value = getAllInfoPhysicalEvents, nativeQuery = true)
     Iterable<PhysicalEventEveView> getPhysicalEvents();
+=======
+    @Query(value = "Select * from evefisico", nativeQuery = true)
+    Optional<PhysicalEvent> getPhysicalEvents();
+
+    // @Query(value = "Select * from eventos, evefisico where eve_id = eve_on_phy_id", nativeQuery = true)
+    // Optional<PhysicalEvent> getAllInfoOnlineEvents();
+
+    // @Query(value = "select * from eventos, eveonline, grupos, usergroup where eve_id = eve_on_eve_id and eve_ug_id = ug_id and ug_gru_id = :id", nativeQuery = true)
+    // Iterable<PhysicalEvent> getPhysicalEventsByGroup(@Param("id") Integer id);
+>>>>>>> mariana
  } 

@@ -61,13 +61,22 @@ public class Main_MenuActivity extends AppCompatActivity {
 
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> mariana
         groupsearch= (EditText)findViewById(R.id.group_searchEditText);
 
         groupsearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // When user changed the Text
+<<<<<<< HEAD
                 Main_MenuActivity.this.GrouplAdapter.getFilter().filter(cs);
+=======
+               // Main_MenuActivity.this.GrouplAdapter.getFilter().filter(cs);
+>>>>>>> mariana
             }
             @Override
             public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
@@ -81,6 +90,10 @@ public class Main_MenuActivity extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> mariana
         GrouplView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -121,7 +134,7 @@ public class Main_MenuActivity extends AppCompatActivity {
                     overridePendingTransition(0,0);
                     return true;
                 case R.id.bottom_nav_maps:
-                    Intent toMaps = new Intent(getApplicationContext(), GroupChatActivity.class/*MapsActivity.class*/);
+                    Intent toMaps = new Intent(getApplicationContext(), MapsActivity.class);
                     startActivity(toMaps);
                     overridePendingTransition(0,0);
                     return true;

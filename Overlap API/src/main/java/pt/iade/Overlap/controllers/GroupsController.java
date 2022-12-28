@@ -39,17 +39,17 @@ public class GroupsController {
         return groupsRepository.findAll(); 
     } 
 
-    @GetMapping(path = "/{gru_id}" , produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/id/{gru_id}" , produces = MediaType.APPLICATION_JSON_VALUE)
     public Group getGroupById(@PathVariable int gru_id) throws NotFoundException {
-        logger.info("User with id"+gru_id);
+        logger.info("Group with id"+gru_id);
         Optional<Group> _group = groupsRepository.findById(gru_id);
         if (!_group.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+gru_id, "Group", "id");
         else return _group.get();
-    }
+    } //nao vamos usar provavelmente.
 
-    @GetMapping(path = "/{gru_name}" , produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/name/{gru_name}" , produces = MediaType.APPLICATION_JSON_VALUE)
     public Group getGroupByName(@PathVariable String gru_name) throws NotFoundException {
-        logger.info("User with id"+gru_name);
+        logger.info("Group with name "+gru_name);
         Optional<Group> _group = groupsRepository.findGroupByName(gru_name);
         if (!_group.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+gru_name, "Group", "name");
         else return _group.get();
@@ -62,8 +62,8 @@ public class GroupsController {
     }
 
     @PutMapping(path = "/update/{gru_id}" , produces = MediaType.APPLICATION_JSON_VALUE)
-    public String updateUser(@PathVariable int use_id, @RequestBody Group group){
-        Group updatedGroup = groupsRepository.findById(use_id).get();
+    public String updateGroup(@PathVariable int gru_id, @RequestBody Group group){
+        Group updatedGroup = groupsRepository.findById(gru_id).get();
         updatedGroup.setCreatorId(group.getCreatorId()); //moderador
         updatedGroup.setGroupName(group.getGroupName());
         updatedGroup.setGroupDescription(group.getGroupDescription());
@@ -74,15 +74,25 @@ public class GroupsController {
     @PutMapping(path = "/update/activity/{gru_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean updateActivity(@PathVariable int gru_id) {
         Optional<Message> LastPost = messageRepository.getLastMessage(gru_id);
+        Optional<Group> gru_at = groupsRepository.findById(gru_id);
 
         if(LastPost.isEmpty()){
             return false;
         }
+        Group activity = gru_at.get();
+        boolean at = activity.getActivity();
+
         Message message = LastPost.get();
         boolean ONtime = LocalDateTime.now().minusMonths(3).isAfter(message.getMessageDate());
+<<<<<<< HEAD
         
 
         return !ONtime; 
+=======
+        at = !ONtime;
+
+        return at; // gru_at = true, grupo está ativo. se gru_at = false entao o grupo esta inativo.
+>>>>>>> mariana
     }
 
     @DeleteMapping(path = "/delete/{gru_id}", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -47,7 +47,21 @@ public class TagsController {
         else return _tag.get();
     }
 
+<<<<<<< HEAD
     
 
+=======
+    @PostMapping(path = "/user/{use_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String CreateUserTag(@PathVariable int use_id, @RequestBody ArrayList<Tag> tags) throws NotFoundException {
+        logger.info("Adding user tag "+use_id);
+        Optional<User> user = UsersRepository.findById(use_id);
+        if (!user.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+use_id, "User", "id");
+        for (Tag tag : tags) {
+            UsertagsRepository.save(new UserTag(tag.getTagId(), use_id));
+        }
+        return "Tag added";
+    }
+// colocar em user.
+>>>>>>> mariana
 
 }
