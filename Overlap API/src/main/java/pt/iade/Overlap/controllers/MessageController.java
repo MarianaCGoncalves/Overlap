@@ -29,7 +29,7 @@ public class MessageController {
     } 
 
     @PostMapping(path = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Message newMessage(@RequestBody Message message, @PathVariable int ug_id){
+    public Message newMessage(@RequestBody Message message){
         logger.info("MessageId: " +message.getMessageId());
         logger.info("Content of the message: "+message.getMessageText());
         return messageRepository.save(message);

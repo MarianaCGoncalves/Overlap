@@ -3,7 +3,6 @@ package pt.iade.Overlap.models;
 
 import java.time.LocalDate;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "eveonline")
-public class OnlineEvent extends Event{
+public class OnlineEvent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "eve_on_id") private int eveOnId;

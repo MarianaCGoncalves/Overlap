@@ -20,7 +20,7 @@ public class Group {
     @Column(name = "gru_use_id") private int creatorId;
     @Column(name = "gru_name") private String groupName;
     @Column(name = "gru_desc") private String groupDescription;
-    @Column(name = "gru_create_age") private LocalDate groupAge = LocalDate.now(); // data de criação do grupo.
+    @Column(name = "gru_create_age") private LocalDate groupAge; // data de criação do grupo.
     @Column(name = "gru_last_post_age") private Timestamp LastPost;
     @Column(name = "gru_at") private boolean activity; // 0 - ativo | 1 - inativo
     
@@ -65,7 +65,7 @@ public class Group {
     public void setLastPost(Timestamp lastPost) {
         LastPost = lastPost;
     }
-    public boolean getActivity() {
+    public boolean isActivity() {
         return activity;
     }
     public void setActivity(boolean activity) {

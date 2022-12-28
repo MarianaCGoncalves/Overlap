@@ -6,21 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PostMapping;
-=======
->>>>>>> mariana
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import pt.iade.Overlap.models.Repositories.OnlineEventRepository;
-<<<<<<< HEAD
 import pt.iade.Overlap.models.views.OnlineEventEveView;
-=======
-import pt.iade.Overlap.models.exceptions.NotFoundException;
-import pt.iade.Overlap.models.views.OnlineEventView;
->>>>>>> mariana
 
 @RestController 
 @RequestMapping(path = "/api/onlineevents") 
@@ -29,7 +21,6 @@ public class OnlineEventsController {
     @Autowired 
     private OnlineEventRepository onlineeventsRepository; 
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE) 
-<<<<<<< HEAD
     public Iterable<OnlineEventEveView> getOnlineEvents() { 
         logger.info("All online events"); 
         return onlineeventsRepository.getOnlineEvents();
@@ -51,21 +42,4 @@ public class OnlineEventsController {
     // public OnlineEventEveView createOnlineEvent(@RequestBody Event event, OnlineEvent onlineevent){
         
     // }
-=======
-    public Iterable<OnlineEventView> getOnlineEvents() { 
-        logger.info("All online events"); 
-        Iterable<OnlineEventView> _ONevent = onlineeventsRepository.getAllInfoOnlineEvents();
-        if(_ONevent == null) throw new NotFoundException(null, null, null);
-        else return _ONevent;
-    } 
-
-    // @GetMapping(path = "/group/{gru_id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    // public Iterable<OnlineEvent> getOnlineEventsByGroup(@PathVariable int gru_id){
-    //     logger.info("Returning all online events by group with id "+gru_id);
-    //     Iterable<OnlineEvent> ONevent = onlineeventsRepository.getOnlineEventsByGroup(gru_id);
-    //     return ONevent;
-    // }
-
-    //TODO: apenas aparecer os eventos online de um certo grupo. 
->>>>>>> mariana
 }

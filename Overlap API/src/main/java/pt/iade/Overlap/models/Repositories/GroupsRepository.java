@@ -12,6 +12,5 @@ public interface GroupsRepository extends CrudRepository<Group,Integer> {
 
     @Query(value= "Select * from grupos where gru_name like :name ", nativeQuery= true)
     Optional<Group> findGroupByName(@Param ("name" )String name);
-
     
  } 

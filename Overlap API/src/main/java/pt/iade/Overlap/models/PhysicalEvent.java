@@ -30,8 +30,4 @@ public class PhysicalEvent {
         return evePhyid;
     }
 
-    public LocalDate getEvePhyDt(){
-        return evePhydt;
-    }
-
 }

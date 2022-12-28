@@ -100,7 +100,7 @@ public class UsersController {
         logger.info("Delete user with id "+id);
         Optional<User> deletedUser = usersRepository.findById(id);
         if(!deletedUser.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+id, "User", "id");
-        else usersRepository.deleteById(id);
+        else usersRepository.delete(deleteUser(id));
         return deletedUser.get();
         
         // User deletedUser = usersRepository.findById(id).get();
@@ -110,9 +110,9 @@ public class UsersController {
 
     @PostMapping(path = "/login" , produces = MediaType.APPLICATION_JSON_VALUE)
     public Integer loginUser(@RequestBody User user) throws NotFoundException {
-        logger.info("Logging in");
+        logger.info("Loging in");
         Optional<User> _user = usersRepository.LoginUser(user.getMail(), user.getPassword());
-        if (!_user.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+user.getMail() + user.getPassword(), "User", "email and password");
+        if (!_user.isPresent()) throw new NotFoundException();
         else return _user.get().getId();
     }
 
@@ -142,8 +142,5 @@ public class UsersController {
 
 
 }
-<<<<<<< HEAD
     
-=======
->>>>>>> mariana
     

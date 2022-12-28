@@ -10,7 +10,7 @@ import pt.iade.Overlap.models.User;
 import pt.iade.Overlap.models.views.UserView; 
  
 public interface UsersRepository extends CrudRepository<User,Integer> {
-    @Query(value = "Select * from users", nativeQuery = true)
+    @Query(value = "Select use_id as id, use_name as name, use_acc_create as accountcreated, use_pass as password, use_mail as mail from users", nativeQuery = true)
     Iterable<UserView> findAllUsers();
 
     @Query(value = "Select * from users where use_id= :id", nativeQuery= true)
@@ -22,7 +22,7 @@ public interface UsersRepository extends CrudRepository<User,Integer> {
     @Query(value = "Select * from users where use_mail like :mail", nativeQuery = true)
     Iterable<User> findUserByEmail(@Param("mail") String mail);
 
-    @Query(value= "Select * from users where use_email like :mail and use_pass like :pass", nativeQuery = true)
+    @Query(value= "select * from users where use_email like :mail and use_pass like :pass", nativeQuery = true)
     Optional<User> LoginUser(@Param("mail") String mail, @Param("pass") String pass);
 
     
