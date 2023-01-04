@@ -102,7 +102,7 @@ Gráfico de Gantt do progresso do Overlap (através do ClickUp).
 ## 7- Diagrama de Classes
 ![BASE DE DADOS _ POO-POO ATUALIZADO drawio](https://user-images.githubusercontent.com/99985414/205518885-5a9fa97c-343e-4d04-8c1c-d521cdae2d0c.png)
 
-## 8- Dicionário de Dados e Guião de Dados (Base de Dados)
+## 8- Dicionário de Dados e Guião de Dados (Base de Dados) e Modelo ER
 	
 ### Dicionário de Dados
 ### Users
@@ -384,6 +384,10 @@ No comboio a caminho de Lisboa, Pablo está aborrecido, às vezes quando não te
 
 #### Exemplo de Evento Fisico
 O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decidem marcar um evento no grupo da Red Bull, pois não lhes apetece conviver com os alguns membros do grupo da Ferrari. Combinam os detalhes do evento e por fim encontram-se em Belém. 
+
+### Modelo ER
+
+![BASE DE DADOS _ POO-BASE DE DADOS drawio](https://user-images.githubusercontent.com/99985414/210554267-c7593359-0683-4564-ad94-7631a28ed4a3.png)
 
 ## 9 - Documentação REST 
 
