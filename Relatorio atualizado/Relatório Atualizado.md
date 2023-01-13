@@ -407,8 +407,8 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 |	/api/users/registo (**POST**)	|
 |	Dados:
 { userName” : “João Pedro” , “password” : “password123” , “mail”: “jp@gmail.com”“ } |
-|	Sucesso (200):
-[ {userName” : “João Pedro” , “password” : “password123” , “mail”: “jp@gmail.com”}] |
+|	Sucesso (200): Retorna o id do user criado.
+[{id:16}] |
 |	Erros: 
 500: Erro de Servidor|
 
@@ -442,6 +442,36 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
 500: Erro de Servidor|
 
+|         *Verificar se o user tem um nome já utilizado*	|
+|:---:	   	|
+|	/api/users/name/verification/{name} (**GET**)	|
+|	**Parâmetros** : **nome** :Os users mostrados têm de conter o texto neste parâmetro no nome do user. 
+|	Sucesso (200): Pode retornar true ou false depedendo do nome que vai verificar|
+|	**Erros**: 
+409: Conflict (Existe um nome igual ao que introduziu)
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
+500: Erro de Servidor|
+
+|         *Listar as tags do user pelo o id*	|
+|:---:	   	|
+|	/api/users/tag/get/by/name/{use_id} (**GET**)	|
+|	**Parâmetros** : **id** :Os users mostrados têm de conter o texto neste parâmetro no id do user. 
+|	Sucesso (200): Retorna as tags de um certo user
+[{"tagId":1,"tagName":"Ferrari"}]|
+|	**Erros**: 
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
+500: Erro de Servidor|
+
+|         *Verificar se o user tem um email já utilizado*	|
+|:---:	   	|
+|	/api/users/mail/verification/{mail} (**GET**)	|
+|	**Parâmetros** : **mail** :Os users mostrados têm de conter o texto neste parâmetro no mail do user. 
+|	Sucesso (200): Pode retornar true ou false depedendo do mail que vai verificar|
+|	**Erros**: 
+409: Conflict (Existe um email igual ao que introduziu)
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
+500: Erro de Servidor|
+
 |         *Eliminar user pelo id*	|
 |:---:	   	|
 |	/api/users/{use_id} (**DELETE**)	|
@@ -454,7 +484,7 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 
 |         *Login do user*	|
 |:---:	   	|
-|	/api/login (**POST**)	|
+|	/api/users/login (**POST**)	|
 |	**Parâmetros** : **mail** :Os users mostrados têm de conter o texto neste parâmetro no mail do user. 
 **password** :Os users mostrados têm de conter o texto neste parâmetro no password do user.|
 |	Sucesso (200): Retorna id do usuário que fez login.
@@ -465,23 +495,64 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 
 |         *User entra num grupo*	|
 |:---:	   	|
-|	/api/group/add/{use_id} (**POST**)	|
-|	**Parâmetros** : **id** :Os users mostrados têm de conter o texto neste parâmetro no id do user. |
-|	Sucesso (200): Retorna os grupos em que o user entrou.
-[{"groupId":1,"creatorId":1,"groupName":"Grupo Ferrari","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Ferrari.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"}] |
+|	/api/users/id/{use_id}/group/add/{gru_id} (**POST**)	|
+|	**Parâmetros** : **use_id** :Os users mostrados têm de conter o texto neste parâmetro no id do user. 
+**gru_id** :Os grupos mostrados têm de conter o texto neste parâmetro no id do grupo. |
+|	Sucesso (200): Retorna 1 quando adiciona o user ao grupo |
 |	**Erros**: 
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
 500: Erro de Servidor|
 
 |         *Associar um user a uma tag*	|
 |:---:	   	|
-|	/api/tag/add/{use_id} (**POST**)	|
-|	**Parâmetros** : **id** :Os users mostrados têm de conter o texto neste parâmetro no id do user. |
-|	Sucesso (200): Retorna as tags em que o user se associou.
-[{"tagId":1,"tagName":"Ferrari"}] |
+|	/api/users/id/{use_id}/tag/add/{tag_id} (**POST**)	|
+|	**Parâmetros** : **use_id** :Os users mostrados têm de conter o texto neste parâmetro no id do user. 
+**gru_id** :Os grupos mostrados têm de conter o texto neste parâmetro no id do grupo. |
+|	Sucesso (200): Retorna 1, pois a função retorna void |
 |	**Erros**: 
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
 500: Erro de Servidor|
+
+|         *Eliminar um user de uma tag*	|
+|:---:	   	|
+|	/api/users/delete/ussertag/{tu_id} (**DELETE**)	|
+|	**Parâmetros** : **tu_id** :Os usertags mostrados têm de conter o texto neste parâmetro no id do user. |
+|	Sucesso (200): Retorna 1, pois a função retorna void |
+|	**Erros**: 
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
+500: Erro de Servidor|
+
+|         *Listar os grupos em que o user está*	|
+|:---:	   	|
+|	/api/users/id/{use_id}/groups (**GET**)	|
+|	**Parâmetros** : **use_id** :Os users mostrados têm de conter o texto neste parâmetro no id do user. |
+|	Sucesso (200): Retorna os grupos do user. [{"groupId":1,"creatorId":1,"groupName":"Grupo Ferrari","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Ferrari.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"}]|
+|	**Erros**: 
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
+500: Erro de Servidor|
+
+|         *Pesquisar os grupos em que o user está pelo o nome*	|
+|:---:	   	|
+|	/api/users/id/{use_id}/group/name/{gru_name} (**GET**)	|
+|	**Parâmetros** : **use_id** :Os users mostrados têm de conter o texto neste parâmetro no id do user. 
+**gru_name** :Os grupos mostrados têm de conter o texto neste parâmetro do nome do grupo.|
+|	Sucesso (200): Retorna os grupos do user. 
+[{"groupId":1,"creatorId":1,"groupName":"Grupo Ferrari","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Ferrari.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"}]|
+|	**Erros**: 
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
+500: Erro de Servidor|
+
+|         *Pesquisar os grupos em que o user está pelo o nome da tag*	|
+|:---:	   	|
+|	/api/users/id/{use_id}/group/tag/name/{tag_name} (**GET**)	|
+|	**Parâmetros** : **use_id** :Os users mostrados têm de conter o texto neste parâmetro no id do user. 
+**tag_name** :As tags mostradas têm de conter o texto neste parâmetro do nome da tag.|
+|	Sucesso (200): Retorna os grupos do user. 
+[{"groupId":1,"creatorId":1,"groupName":"Grupo Ferrari","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Ferrari.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"}]|
+|	**Erros**: 
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado) 
+500: Erro de Servidor|
+
 
 ### Recurso Grupos (api/groups)
 
@@ -490,6 +561,55 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 |	/api/groups (**GET**)	|
 |	Sucesso (200):
 [{"groupId":1,"creatorId":1,"groupName":"Grupo Ferrari","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Ferrari.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"},{"groupId":2,"creatorId":1,"groupName":"Grupo Mercedes","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Mercedes.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"},{"groupId":3,"creatorId":1,"groupName":"Grupo RedBull","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 RedBull.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"},{"groupId":4,"creatorId":1,"groupName":"Grupo Mclaren ","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Mclaren.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"} (…) ] |
+|	**Erros**:
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
+500: Erro de Servidor|
+
+|         *Pesquisar grupo pelo id*	|
+|:---:	   	|
+|	/api/groups/{gru_id} (**GET**)	|
+|**Parâmetros** : **gru_id** :Os grupos mostrados têm de conter o texto neste parâmetro no id do grupo.	|
+|	Sucesso (200):
+[{"groupId":1,"creatorId":1,"groupName":"Grupo Ferrari","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Ferrari.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"}] |
+|	**Erros**:
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
+500: Erro de Servidor|
+
+|         *Pesquisar grupo pelo nome*	|
+|:---:	   	|
+|	/api/groups/by/name/{gru_name} (**GET**)	|
+|**Parâmetros** : **gru_name** :Os grupos mostrados têm de conter o texto neste parâmetro do nome do grupo.	|
+|	Sucesso (200):
+[{"groupId":1,"creatorId":1,"groupName":"Grupo Ferrari","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Ferrari.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"}] |
+|	**Erros**:
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
+500: Erro de Servidor|
+
+|         *Pesquisar grupo pelo nome da tag*	|
+|:---:	   	|
+|	/api/groups/by/tag/{tag_name} (**GET**)	|
+|**Parâmetros** : **tag_name** :As tags mostradas têm de conter o texto neste parâmetro do nome da tag.	|
+|	Sucesso (200):
+[{"groupId":1,"creatorId":1,"groupName":"Grupo Ferrari","groupDescription":"Grupo que junta pessoas com interesse na equipa de f1 Ferrari.","groupAge":"2022-09-09","activity":true,"lastPost":"2022-09-10T08:30:25.000+00:00"}] |
+|	**Erros**:
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
+500: Erro de Servidor|
+
+|         *Associar uma tag a um grupo*	|
+|:---:	   	|
+|	/api/groups/id/{gru_id}/tag/add/{tag_id} (**POST**)	|
+|**Parâmetros** : **gru_id** :Os grupos mostrados têm de conter o texto neste parâmetro no id do grupo.
+**tag_id** : As tags mostradas têm de conter o texto neste parâmetro no id do grupo.|
+|	Sucesso (200):Retorna 1 pois a função retorna void. |
+|	**Erros**:
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
+500: Erro de Servidor|
+
+|         *Dessaciar uma tag a um grupo*	|
+|:---:	   	|
+|	/api/groups/delete/grouptag/{tg_id} (**DELETE**)	|
+|**Parâmetros** : **tg_id** :Os grouptags mostrados têm de conter o texto neste parâmetro no id do grouptag.|
+|	Sucesso (200):Retorna 1 pois a função retorna void. |
 |	**Erros**:
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
 500: Erro de Servidor|
@@ -518,7 +638,7 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 |	/api/groups/update/activity/{gru_id} (**GET**)	|
 |**Parâmetros**:
 **id**: Para identificar a atividade do grupo, precisamos do id.|
-|	Sucesso (200):
+|	Sucesso (200): Retorna true ou false 
 [{true}]|
 |	**Erros**:
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
@@ -554,6 +674,15 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
 500: Erro de Servidor|
 
+|         *Listar todas as mensagens por id do grupo*	|
+|:---:	   	|
+|	/api/message/group/id/{gru_id} (**GET**)	|
+|**Parâmetros** : **gru_id**: Para identificar a mensagem que queremos alterar, precisamos do id.  |
+|	Sucesso (200): [{"messageId":1,"messageText":"Alguém quer almoçar para depois ir ver a corrida?","messageUserId":1,"messageUserGroupId":1,"messageDate":"2022-09-22T14:10:25"}]|
+|	**Erros**:
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
+500: Erro de Servidor|
+
 ### Recurso Tags (api/tags)
 
 |         *Listar todas as tags*	|
@@ -565,10 +694,19 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
 500: Erro de Servidor|
 
+|         *Procurar tag pelo id*	|
+|:---:	   	|
+|	/api/tags/id/{tag_id} (**GET**)	|
+|	Sucesso (200): **Parâmetros** : **tag_id**: Para pesquisar pelo id da tag.
+[{"tagId":1,"tagName":"Ferrari"}] |
+|	**Erros**:
+404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
+500: Erro de Servidor|
+
 |         *Procurar tag pelo nome*	|
 |:---:	   	|
-|	/api/tags/name/{tag_name} (**GET**)	|
-|	Sucesso (200):
+|	/api/tags/by/name/{tag_name} (**GET**)	|
+|	Sucesso (200): **Parâmetros** : **tag_name**: Para pesquisar pelo nome da tag.
 [{"tagId":1,"tagName":"Ferrari"}] |
 |	**Erros**:
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
@@ -596,7 +734,7 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 |:---:	   	|
 |	/api/onlineevents/name/{gru_name} (**GET**)	|
 |	Sucesso (200): |
-|	**Erros**:
+|	**Erros**: 
 404: Not Found (O servidor não conseguiu encontrar o recurso solicitado)
 500: Erro de Servidor|
 
@@ -629,17 +767,22 @@ Não será preciso um método de verificação que pertence ao grupo, pois o obj
 
 ## 11 - Bibliografia
 
-SpringBoot: 
+Formula One Digital Media Limited (2014). Official F1 ® App. Google Play. https://play.google.com/store/apps/details?id=com.softpauer.f1timingapp2014.basic&hl=pt_PT&gl=US
+
+VMware Inc (2002). Spring Boot. Spring Boot.
 https://spring.io/projects/spring-boot
 
-VS Code: 
+Microsoft (2015). Visual Studio Code. Visual Studio Code - Code Editing. Redefined.
 https://code.visualstudio.com/
 
-Figma (MockUps):
-https://www.figma.com/
+Dylan Field & Evan Wallace (2016). Figma. Figma: the collaborative interface design tool. https://www.figma.com/
 
-PgAdmin:
-https://www.pgadmin.org/download/
+PostgreSQL Global Development Group (1996). pgAdmin. pgAdmin - PostgreSQL Tools https://www.pgadmin.org/
 
-AndroidStudio:
-https://developer.android.com/studio
+Google(2013). Download Android Studio & App Tools.Android Studio. Android Developers. https://developer.android.com/studio
+
+Zeb Evans & Alex Yurkowiski. Click Up (2016). ClickUp™ | One app to replace them all. ClickUp. https://clickup.com/
+
+SquareDev (2013). Retrofit. Square Open Source. https://square.github.io/retrofit/
+
+SmartBear Software (2011). Swagger. Swagger: API Documentation & Design Tools for Teams. https://swagger.io/
