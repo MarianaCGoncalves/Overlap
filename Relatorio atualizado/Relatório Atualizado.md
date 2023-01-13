@@ -66,6 +66,10 @@ Java: usado para desenvolver a REST API e a aplicação móvel.
 
 SQLpostgres: para gerir os dados dos utilizadores.
 
+Modulação de Dados: Para criar o diagrama de entidade-relação do Overlap.
+
+Java teórico: Criar o Diagrama de Classe do Overlap.
+
 
 ### 4.4-Arquitetura da solução
 Overlap estará dividida em três partes: 
@@ -77,22 +81,25 @@ A API vai permitir a comunicação entre a base de dados e a aplicação móvel.
 
 ### 4.5-Tecnologias a utilizar
 
-* SpringBoot: https://spring.io/projects/spring-boot
+* Spring Boot: É um framework Open Source que surgiu com o intuito de facilitar as configurações iniciais de um projeto. 
 
-* VS Code: https://code.visualstudio.com/
+* VS Code: Visual Studio Code é um editor de código desenvolvido pela Microsoft.
 
-* Figma (MockUps): https://www.figma.com/
+* Figma: Plataforma para construção de interfaces e protótipos. Utilizado para realizar MockUps.
 
-* PgAdmin: https://www.pgadmin.org/download/
+* PgAdmin: Ferramenta de gestão para o PostgreSQL.
 
-* AndroidStudio: https://developer.android.com/studio
+* Android Studio: Editor de código mas mais focado em desenvolvimento de Android.
 
-*  RetroFit2: https://square.github.io/retrofit/
+* RetroFit2: Permite criar uma ligação mais facilitada Web Service e Android.
 
-* Swagger: https://swagger.io/
+* Swagger: É um cliente HTTP seguro, que permite visualizar todos os endpoints disponíveis na API.
+
+* Click Up: Plataforma de gestão e planeamento de projetos.
 
 ## 5-Planeamento e calendarização
-<img width="702" alt="Captura de ecrã_20221212_200217" src="https://user-images.githubusercontent.com/99985414/207143097-1f6a9a0a-6f10-4701-8ad6-33eb213470b8.png">
+
+![image](https://user-images.githubusercontent.com/99985414/212424798-78753aae-7718-4f8a-a409-7623d193d733.png)
 
 Gráfico de Gantt do progresso do Overlap (através do ClickUp).
 
@@ -414,7 +421,7 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 
 |         *Pesquisar um user pelo id*	|
 |:---:	   	|
-|	/api/users/{use_id} (**GET**)	|
+|	/api/users/id/{use_id} (**GET**)	|
 |	**Parâmetros** : **id** :Os users mostrados têm de conter o texto neste parâmetro no id do user.  |
 |	Sucesso (200): 
 [{"userName":"Gustavo Costa","password":"123","mail":"gcosta@gmail.com","id":1}] |
@@ -424,7 +431,7 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 
 |         *Pesquisar um user pelo nome*	|
 |:---:	   	|
-|	/api/users/{use_name} (**GET**)	|
+|	/api/users/name/{use_name} (**GET**)	|
 |	**Parâmetros** : **nome** :Os users mostrados têm de conter o texto neste parâmetro no nome do user.  |
 |	Sucesso (200): 
 [{"userName":"Gustavo Costa","password":"123","mail":"gcosta@gmail.com","id":1}] |
