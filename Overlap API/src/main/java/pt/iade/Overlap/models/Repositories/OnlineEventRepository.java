@@ -20,7 +20,7 @@ public interface OnlineEventRepository extends CrudRepository<OnlineEvent,Intege
         +"gru_name as groupname, gru_desc as groupdescription, gru_create_age as groupbirthday, "
         +"gru_last_post_age as lastpost, gru_at as groupactivity "
         +"from eveonline, eventos, usergroup, grupos, users where eve_on_eve_id = eve_id "
-        +"and eve_ug_id = ug_id and use_id = ug_use_id and and ug_gru_id = gru_id";
+        +"and eve_ug_id = ug_id and use_id = ug_use_id and ug_gru_id = gru_id";
 
         @Query(value = getAllInfoOnlineEvents, nativeQuery = true)
         Iterable<OnlineEventEveView> getOnlineEvents();

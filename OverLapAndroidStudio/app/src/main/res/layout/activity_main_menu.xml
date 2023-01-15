@@ -8,17 +8,16 @@
 
 
     <EditText
-        android:id="@+id/group_searchEditText"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/group_searchgroups"
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
         android:hint="Search groups..."
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
+        app:layout_constraintTop_toBottomOf="@+id/findGroupTextView" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_menu_bottom_nav"
@@ -34,13 +33,89 @@
 
     <ListView
         android:id="@+id/GroupListView"
-        android:layout_width="348dp"
-        android:layout_height="502dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="266dp"
+        android:layout_height="443dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/group_searchEditText"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintTop_toBottomOf="@+id/NewGroupTextview">
+
+    </ListView>
+
+    <ToggleButton
+        android:id="@+id/search_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="#00A6FF"
+        android:text="ToggleButton"
+        android:textOff="BY NAME"
+        android:textOn="BY TAG"
+        app:layout_constraintBottom_toBottomOf="@+id/group_searchgroups"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toEndOf="@+id/group_searchgroups"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/findGroupTextView"
+        android:layout_width="251dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Your groups"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NewGroupTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Click here to find new groups!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#68000000"
+        android:textColorHint="#03FFC4"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_searchgroups" />
+
+    <ImageButton
+        android:id="@+id/CreateButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toEndOf="@+id/GroupListView"
+        app:layout_constraintTop_toBottomOf="@+id/search_method"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/add_button" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="99dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="255dp"
+        android:layout_marginTop="304dp"
+        android:lines="2"
+        android:singleLine="false"
+        android:text="Create your Group here!"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/main_menu_bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/GroupListView"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

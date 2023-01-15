@@ -1,6 +1,7 @@
 package pt.iade.Overlap.models;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,17 +18,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "use_id") private int userId;
     @Column(name = "use_name") private String userName;
-    @Column(name = "use_acc_age") private LocalDate accountAge = LocalDate.now(); 
+    @Column(name = "use_acc_age") private LocalDateTime accountAge;
     @Column(name = "use_pass") private String password;
     @Column(name = "use_mail") private String mail;
 
     public User() {}
 
-    public User(String userName, String password, String mail, LocalDate accountAge) {
+    public User(String userName, String password, String mail) {
         this.userName = userName;
         this.password = password;
         this.mail = mail;
-        this.accountAge= accountAge;
+        this.accountAge=  LocalDateTime.now();
 
     }
 
@@ -39,7 +40,7 @@ public class User {
         return userName;
     }
 
-    public LocalDate getNow() {
+    public LocalDateTime getNow() {
         return accountAge;
     }
 

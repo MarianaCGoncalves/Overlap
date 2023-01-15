@@ -22,10 +22,9 @@ public class  Event {
     @Column(name = "eve_type") private String eventType;
     
     public Event() {}
-    public Event(int eventUserGroupId, String eventDescription,
-     LocalDateTime eventDate, String eventName) {
+    public Event(int eventUserGroupId, String eventDescription, String eventName) {
         this.eventUserGroupId = eventUserGroupId;
-        this.eventDate = eventDate;
+        this.eventDate = LocalDateTime.now();
         this.eventDescription = eventDescription;
         this.eventName = eventName;
     }

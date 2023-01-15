@@ -12,6 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class SignUpActivity extends AppCompatActivity {
 
 
@@ -76,12 +82,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void VerifyData(View view){
-        Intent SsignUpTags = new Intent(SignUpActivity.this, UserTagsMainActivity.class);
-        startActivity(SsignUpTags);
-        finish();
-
-        Toast toast = null;
-
+        Toast toast;
         if (isEmpty(name)){
             toast = Toast.makeText(this,"Precisa de inserir o nome para criar conta", Toast.LENGTH_SHORT);
         }
@@ -98,9 +99,35 @@ public class SignUpActivity extends AppCompatActivity {
             toast = Toast.makeText(this,"Palavra-passe necessita de ter pelo menos uma letra maiscula, uma miniscula e um numero.",Toast.LENGTH_SHORT);
         }
         else{
-            Intent SignUpTags = new Intent(SignUpActivity.this, UserTagsMainActivity.class);
-            startActivity(SignUpTags);
-            finish();
+            toast= Toast.makeText(this,"user registado",Toast.LENGTH_SHORT);
+            String _name= name.getText().toString();
+            String _email=email.getText().toString();
+            String _password=password.getText().toString();
+            User _user= new User(_name,_password,_email );
+
+            try {
+            RetrofitSignUpInterface retrofitSignUpInterface=
+                    RetrofitService.getRetrofit().create(RetrofitSignUpInterface.class);
+                retrofitSignUpInterface.RegisterUser(_name, _password, _email).enqueue(new Callback<Integer>() {
+                @Override
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
+
+                    int ida= response.body();
+                    Intent SignUpTags = new Intent(SignUpActivity.this, UserTagsMainActivity.class);
+                    SignUpTags.putExtra("ida",ida);
+                    startActivity(SignUpTags);
+                    finish();
+                }
+
+                @Override
+                public void onFailure(Call<Integer> call, Throwable t) {
+
+                }
+            });
+
+        }catch (Exception e){
+
+        }
         }
         toast.show();
     }

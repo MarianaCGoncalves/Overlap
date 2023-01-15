@@ -1,34 +1,20 @@
-package pt.iade.Overlap.models;
+package com.example.overlapandroidstudio;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-
-
-@Entity
-@Table(name = "mensagem")
 public class Message {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    @Column(name = "mes_id") private int messageId;
-    @Column(name = "mes_text") private String messageText;
-    @Column(name = "mes_use_id") private int messageUserId; 
-    @Column(name = "mes_ug_id") private int messageUserGroupId;
-    @Column(name = "mes_date") private LocalDateTime messageDate;
+    private int messageId;
+    private String messageText;
+    private int messageUserId;
+    private int messageUserGroupId;
+    private LocalDateTime messageDate;
 
     public Message(){}
     public Message(int messageUserId, int messageUserGroupId, String messageText) {
         this.messageUserId = messageUserId;
         this.messageUserGroupId = messageUserGroupId;
         this.messageText = messageText;
-        this.messageDate= LocalDateTime.now();
+        this.messageDate = LocalDateTime.now();
     }
 
     public int getMessageId() {
@@ -54,10 +40,4 @@ public class Message {
     public LocalDateTime getMessageDate() {
         return messageDate;
     }
-
-    
-
-    
-   
-    
 }

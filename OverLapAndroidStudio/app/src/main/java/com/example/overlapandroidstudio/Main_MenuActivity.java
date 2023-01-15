@@ -6,14 +6,17 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import android.view.View;
-import android.widget.AdapterView;
+
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,18 +30,29 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
+
 public class Main_MenuActivity extends AppCompatActivity {
     BottomNavigationView buttom_nav_option;
+    ImageButton createbutton;
+    TextView findg;
     ListView GrouplView;
     EditText groupsearch;
     GroupListAdapter GrouplAdapter;
     ArrayList<Group> groupstorage;
     Group groupselected;
+    ToggleButton search_metho;
+    boolean state = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        search_metho = findViewById(R.id.search_method);
+        createbutton= findViewById(R.id.CreateButton);
+        findg=findViewById(R.id.NewGroupTextview);
+
+        Intent intent = getIntent();
+        int ida = intent.getIntExtra("ida", 0);
 
         GrouplView = (ListView)findViewById(R.id.GroupListView);
         try { RetrofitMainMenuInterface retrofitMainMenuInterface=
@@ -61,22 +75,65 @@ public class Main_MenuActivity extends AppCompatActivity {
 
         }
 
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> mariana
-        groupsearch= (EditText)findViewById(R.id.group_searchEditText);
 
+
+
+
+
+        search_metho.setOnClickListener(view -> state = search_metho.isChecked());
+        groupsearch= (EditText)findViewById(R.id.group_searchgroups);
         groupsearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // When user changed the Text
-<<<<<<< HEAD
-                Main_MenuActivity.this.GrouplAdapter.getFilter().filter(cs);
-=======
-               // Main_MenuActivity.this.GrouplAdapter.getFilter().filter(cs);
->>>>>>> mariana
+                String name = cs.toString();
+
+                if (!state){
+                    try {
+                        RetrofitMainMenuInterface retrofitMainMenuInterface =
+                                RetrofitService.getRetrofit().create(RetrofitMainMenuInterface.class);
+                        retrofitMainMenuInterface.GetGroupWithName(name).enqueue(new Callback<ArrayList<Group>>() {
+                            @Override
+                            public void onResponse(Call<ArrayList<Group>> call, Response<ArrayList<Group>> response) {
+                                groupstorage = response.body();
+                                if (groupstorage!= null) {
+                                    GrouplAdapter = new GroupListAdapter(Main_MenuActivity.this, groupstorage);
+                                    GrouplView.setAdapter(GrouplAdapter);
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<ArrayList<Group>> call, Throwable t) {
+
+                            }
+                        });
+
+                    } catch (Exception e) {
+
+                    }
+                }
+                else {
+                    try {
+                        RetrofitMainMenuInterface retrofitMainMenuInterface =
+                                RetrofitService.getRetrofit().create(RetrofitMainMenuInterface.class);
+                        retrofitMainMenuInterface.GetGroupWithTag(name).enqueue(new Callback<ArrayList<Group>>() {
+                            @Override
+                            public void onResponse(Call<ArrayList<Group>> call, Response<ArrayList<Group>> response) {
+                                groupstorage = response.body();
+                                GrouplAdapter = new GroupListAdapter(Main_MenuActivity.this, groupstorage);
+                                GrouplView.setAdapter(GrouplAdapter);
+                            }
+
+                            @Override
+                            public void onFailure(Call<ArrayList<Group>> call, Throwable t) {
+
+                            }
+                        });
+
+                    } catch (Exception e) {
+
+                    }
+                }
             }
             @Override
             public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
@@ -90,28 +147,59 @@ public class Main_MenuActivity extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> mariana
-        GrouplView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                groupselected= groupstorage.get(position);
-                String groupname= groupselected.getGroupName();
-                int groupid= groupselected.getGroupId();
-                String groupdescription= groupselected.getGroupDescription();
-                Toast.makeText(Main_MenuActivity.this,
-                        "Name: Pipis " + position,
-                        Toast.LENGTH_SHORT).show();
-                Intent IntentChatGroup = new Intent(Main_MenuActivity.this, GroupChatActivity.class);
-                IntentChatGroup.putExtra("groupname", groupname);
-                IntentChatGroup.putExtra("groupid", groupid);
-                IntentChatGroup.putExtra("groupdescription", groupdescription);
-                startActivity(IntentChatGroup);
 
-            }
+
+
+
+
+        //enter group
+        GrouplView.setOnItemClickListener((parent, view, position, id) -> {
+            groupselected= groupstorage.get(position);
+            String groupname= groupselected.getGroupName();
+            int groupid= groupselected.getGroupId();
+            String groupdescription= groupselected.getGroupDescription();
+            Toast.makeText(Main_MenuActivity.this,
+                    "Name:  " + position,
+                    Toast.LENGTH_SHORT).show();
+            Intent IntentChatGroup = new Intent(Main_MenuActivity.this, GroupChatActivity.class);
+            IntentChatGroup.putExtra("groupname", groupname);
+            IntentChatGroup.putExtra("groupid", groupid);
+            IntentChatGroup.putExtra("groupdescription", groupdescription);
+            startActivity(IntentChatGroup);
+
         });
+
+
+        findg.setOnClickListener(view ->{
+            Intent gonewgroups = new Intent(Main_MenuActivity.this, FindGroupsActivity.class);
+            gonewgroups.putExtra("ida",ida);
+            startActivity(gonewgroups);
+            finish();
+                }
+        );
+
+        createbutton.setOnClickListener(view ->{
+            Intent goCreategroups = new Intent(Main_MenuActivity.this, CreateGroupActivity.class);
+            goCreategroups.putExtra("ida",ida);
+            startActivity(goCreategroups);
+            finish();
+                }
+        );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //bottom menu
 
         // Initialize and assign variable
 
@@ -144,7 +232,7 @@ public class Main_MenuActivity extends AppCompatActivity {
 
     }
 
-
+    //top menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

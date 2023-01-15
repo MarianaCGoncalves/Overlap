@@ -22,11 +22,16 @@ public class MessageController {
     private Logger logger = LoggerFactory.getLogger(MessageController.class); 
     @Autowired 
     private MessageRepository messageRepository; 
-    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE) 
-    public Iterable<Message> getMessage() { 
+     
+
+    @GetMapping(path = "/group/id/{gru_id}", produces = MediaType.APPLICATION_JSON_VALUE) 
+    public Iterable<Message> getGroupMessage(@PathVariable int gru_id) { 
         logger.info("All messages "); 
-        return messageRepository.findAll(); 
+        Iterable<Message> _message = messageRepository.getAllMessages(gru_id);
+        return _message; 
     } 
+
+
 
     @PostMapping(path = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public Message newMessage(@RequestBody Message message){
@@ -36,11 +41,19 @@ public class MessageController {
     }
 
     @PutMapping(path = "/edit/{mes_id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String editMessage(@PathVariable int mes_id, int gru_id, int use_id, @RequestBody Message message){
-        Message editedMessage = messageRepository.findById(mes_id).get();
-        editedMessage.setMessageText(message.getMessageText());
-        return "Message edited";        //TODO: Query:Procurar pela mensagem num certo grupo criado pelo um user.
-    }
+    public String editMessage(@PathVariable Message originalMessage, int use_id,@RequestBody String newtext){
+        int _mes_id = originalMessage.getMessageId();
+        int _mes_use_id = originalMessage.getMessageUserId();
+        if (_mes_use_id== use_id){
+            Message editedMessage = messageRepository.findById(_mes_id).get();
+        editedMessage.setMessageText(originalMessage.getMessageText());
+        return "Message edited";    }
+        else{
+            return "Do not try to change others messages";
+        }
+            
+    }   
+
 
     @DeleteMapping(path = "delete/{mes_id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String deleteMessage(@PathVariable int mes_id){

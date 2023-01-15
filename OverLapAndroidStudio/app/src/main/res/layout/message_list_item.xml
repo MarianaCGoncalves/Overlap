@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/_poster"
+        android:layout_width="89dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:clickable="true"
+        android:layout_marginTop="8dp"
+        android:text="Poster" />
+
+    <TextView
+        android:id="@+id/_date"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/_poster"
+        android:text="Text date" />
+
+    <TextView
+        android:id="@+id/_body"
+        android:layout_width="249dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/_poster"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:inputType="textMultiLine|textImeMultiLine"
+        android:text="Message Body" />
+
+</RelativeLayout>
+

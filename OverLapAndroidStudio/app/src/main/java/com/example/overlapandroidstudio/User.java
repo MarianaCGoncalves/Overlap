@@ -1,11 +1,12 @@
 package com.example.overlapandroidstudio;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 public class User {
     private int userId;
     private String userName;
-    private static LocalDate accountAge;
+    private static LocalDateTime accountAge;
     private String password;
     private String mail;
 
@@ -15,6 +16,7 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.mail = mail;
+        this.accountAge= LocalDateTime.now();
     }
 
     public int getId() {
@@ -25,7 +27,7 @@ public class User {
         return userName;
     }
 
-    public static LocalDate getNow() {
+    public static LocalDateTime getNow() {
         return accountAge;
     }
 

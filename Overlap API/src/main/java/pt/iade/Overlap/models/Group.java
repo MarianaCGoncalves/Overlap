@@ -1,7 +1,7 @@
 package pt.iade.Overlap.models;
 import java.sql.Timestamp;
-import java.time.LocalDate; 
-
+import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,14 +20,14 @@ public class Group {
     @Column(name = "gru_use_id") private int creatorId;
     @Column(name = "gru_name") private String groupName;
     @Column(name = "gru_desc") private String groupDescription;
-    @Column(name = "gru_create_age") private LocalDate groupAge; // data de criação do grupo.
+    @Column(name = "gru_create_age") private Date groupAge; // data de criação do grupo.
     @Column(name = "gru_last_post_age") private Timestamp LastPost;
     @Column(name = "gru_at") private boolean activity; // 0 - ativo | 1 - inativo
     
 
     
     public Group(){}
-    public Group(int creatorId, String groupName, String groupDescription, LocalDate groupAge, Timestamp LastPost, boolean activity) {
+    public Group(int creatorId, String groupName, String groupDescription, Date groupAge, Timestamp LastPost, boolean activity) {
         this.creatorId = creatorId;
         this.groupName = groupName;
         this.groupDescription = groupDescription;
@@ -38,7 +38,7 @@ public class Group {
     public int getGroupId() {
         return groupId;
     }
-    public LocalDate getGroupAge() {
+    public Date getGroupAge() {
         return groupAge;
     }
     public int getCreatorId() {
@@ -70,6 +70,7 @@ public class Group {
     }
     public void setActivity(boolean activity) {
         this.activity = activity;
-    }  
-   
+    }
 }
+
+

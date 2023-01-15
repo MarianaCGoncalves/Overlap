@@ -29,6 +29,8 @@ public class FriendsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
         FriendslView=findViewById(R.id.FriendListView);
+        Intent intent = getIntent();
+        int ida = intent.getIntExtra("ida", 0);
 
         try {
             RetrofitFriendsInterface RetrofitFriendsInterface=

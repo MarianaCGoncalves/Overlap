@@ -39,13 +39,21 @@ public class TagsController {
         else return _tag.get();
     }
 
-    @GetMapping (path = "/name/{tag_name}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Tag getTagByName(@PathVariable String tag_name) throws NotFoundException {
+    
+
+    @GetMapping (path = "/by/name/{tag_name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<Tag> getTagByName(@PathVariable String tag_name) throws NotFoundException {
         logger.info("Tag with name "+tag_name);
-        Optional<Tag> _tag = tagsRepository.findTagByName(tag_name);
-        if (!_tag.isPresent()) throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+tag_name, "Tag", "name");
-        else return _tag.get();
+        ArrayList<Tag> _tag = tagsRepository.findTagByName(tag_name);
+        if (_tag.size()>0){return _tag;} 
+                else 
+                {throw new pt.iade.Overlap.models.exceptions.NotFoundException(""+tag_name, "Tag", "name");
+                
     }
+}
+
+    
+    //devolve uma tag pode ser util nao me lembro o proposito
 
     
 

@@ -6,16 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".UserTagsMainActivity">
 
-    <ListView
-        android:id="@+id/User_tag_ListView"
-        android:layout_width="290dp"
-        android:layout_height="564dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <EditText
+        android:id="@+id/user_searchtags"
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:hint="Search tags..."
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497" />
+        app:layout_constraintVertical_bias="0.825" />
+
+    <ListView
+        android:id="@+id/User_tag_ListView"
+        android:layout_width="301dp"
+        android:layout_height="390dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.655" />
 
     <Button
         android:id="@+id/from_tag_go_menu"
@@ -39,6 +51,18 @@
         app:layout_constraintBottom_toTopOf="@+id/User_tag_ListView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.318" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available tags"
+        app:layout_constraintBottom_toTopOf="@+id/User_tag_ListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.82" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
