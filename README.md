@@ -7,9 +7,16 @@
 
 #### Este repositório contêm:
 
-* Proposta 1: PDF e markdown do primeiro relatório para a primeira entrega. Entregue em 7/10/2022.
-* Proposta 2: PDF e markdown da versão melhorada do primeiro relatório. Entregue em 23/10/2022.
-* Base de dados do Projeto: Código para a criação da base de dados (create, populate e queries) e também o documento de base de dados (Dicionário de Dados e Guião de Dados).
+* Documentos:
+  * Proposta 1: PDF e markdown do primeiro relatório para a primeira entrega. Entregue em 7/10/2022.
+  * Proposta 2: PDF e markdown da versão melhorada do primeiro relatório. Entregue em 23/10/2022.
+  * Relatorio final: PDF e markdown. PDF contêm apenas os tópicos mencionados pelo professor da UC relativamente ao template e o markdown é o documento único de todas as UC's. Entregue em 13/1/2023.
+
+* Base de dados do Projeto: 
+  * Criação de Base de dados:
+    *
+  
+  
 * AndroidStudio Files: Ficheiros do Android Studio.
 * API: Código para criação da API. 
 
