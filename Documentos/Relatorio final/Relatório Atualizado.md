@@ -750,25 +750,44 @@ O casal Pinheiro estão ambos em dois grupos de F1, Red Bull e Ferrari, e decide
 
 
 ## 10 - Manual do Utilizador
-Após entrar na aplicação, o utilizador vai encontrar uma caixa de texto onde irá  inserir o nome, email e palavra-passe para a sua conta, em seguida o utilizador poderá escolher os desportos que deseja seguir e as equipas favoritas.
 
+Após entrar na aplicação, o utilizador vai encontrar uma caixa de texto onde irá  inserir o nome, email e palavra-passe para a sua conta.
 
 ![bc722cbb-9ff9-4190-84a7-e5952bcf240c](https://user-images.githubusercontent.com/99985414/210182145-81f18105-01ee-4e73-83b1-7e60415ea66f.jpg) 
-![4040b35e-fdcb-43ac-a7ce-66a12798a9be](https://user-images.githubusercontent.com/99985414/210182149-ab46d85e-a23f-44c2-a962-8aec9648692d.jpg)
 
-Após o registo na aplicação o utilizador poderá ver a Home Page onde se encontram os grupos  aos quais se juntou, caso o utilizador não esteja em nenhum grupo, serão sugeridos grupos onde pessoas com gostos semelhantes se encontram.
+Após o registo na aplicação será pedido ao utilizador para selecionar as equipas em que está interessado.
+
+![image](https://user-images.githubusercontent.com/99985414/213503189-b6636f15-e546-447c-ba55-3e29099f88ce.png)
+
 O utilizador encontrará três botões na parte inferior do ecrã: 
 
 * Ícone de usuario "Friends", onde poderá adicionar os seus amigos.
 * Ícone de home "Home", onde verá os grupos que pode entrar.
 * Ícone de pin de GPS "Maps", onde verá os eventos de grupos que entrou.
 
-![78ff5cbb-9292-490f-8f27-d2b1f9c8a136](https://user-images.githubusercontent.com/99985414/210182184-0cd98ce2-51eb-4543-91fd-f88c1abced50.jpg)
+**Home**
 
 
+![image](https://user-images.githubusercontent.com/99985414/213504229-0cd01569-2eb5-4194-b5e5-ec71c94ed325.png)
 
-Os eventos são criados nos grupos, nos quais os membros definem uma localização para o decorrer do mesmo. 
-Não será preciso um método de verificação que pertence ao grupo, pois o objetivo da aplicação é encontrar pessoas com o mesmo gosto desportivo, mesmo que a pessoa não esteja a utilizar o Overlap.
+
+Ao entrar num grupo poderá visualizar as mensagens no *groupchat*.
+
+
+![d72ebffb-247b-49f9-b5d6-b765bbe34288](https://user-images.githubusercontent.com/99985414/213505562-d938eee0-2f25-41cc-9932-a7bf70a40f68.jpg)
+
+
+De volta à Home Page, o botão vermelho com o "+",  utilizador poderá criar grupos.
+
+
+![0a2394ca-b79c-4ea7-8552-31e347f8e7c4](https://user-images.githubusercontent.com/99985414/213503713-cc5c6034-a764-451b-8f00-12323259c781.jpg)
+
+
+**Friends**
+
+
+![f51ee018-2423-416e-85c1-ce67f40d017a](https://user-images.githubusercontent.com/99985414/213504675-4dfae7e1-9249-46a3-b5d7-16f9f5527d6e.jpg)
+
 
 
 
