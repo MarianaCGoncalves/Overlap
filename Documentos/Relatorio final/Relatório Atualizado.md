@@ -789,6 +789,13 @@ De volta à Home Page, o botão vermelho com o "+",  utilizador poderá criar gr
 ![f51ee018-2423-416e-85c1-ce67f40d017a](https://user-images.githubusercontent.com/99985414/213504675-4dfae7e1-9249-46a3-b5d7-16f9f5527d6e.jpg)
 
 
+**Maps**
+
+Poderá ver os possiveis eventos do grupo.
+
+
+![image](https://user-images.githubusercontent.com/99985414/213569201-2804b846-3abf-4c6a-8b0a-b53d34b32e09.png)
+
 
 
 ## 11 - Bibliografia
